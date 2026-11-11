@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us · Gemora Gemstone & Mineral Jewelry</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/fav.jpeg" type="image/jpeg">
+    <!-- Tailwind CSS via CDN -->
+      <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#1E2A3A',
+                            secondary: '#B8860B',
+                            accent: '#C9A96E',
+                            'accent-light': '#E8D5B7',
+                            'accent-dark': '#8B6914',
+                            blush: '#F5F0EA',
+                            rose: '#C9A96E',
+                            gold: '#B8860B',
+                            bg: '#F5F0EA',
+                            card: '#FFFFFF',
+                            dark: '#0A0E14',
+                            'dark-card': '#12181F',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+                        slideUp: { '0%': { transform: 'translateY(40px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        bounceGentle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.7' } },
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(circle at 20% 30%, rgba(201,169,110,0.08) 0%, transparent 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F0EA;
+            color: #1E2A3A;
+        }
+        .dark body {
+            background: #0A0E14;
+            color: #F5F0EA;
+        }
+        /* Scrollbar */
+        body::-webkit-scrollbar { width: 6px; }
+        body::-webkit-scrollbar-track { background: #F5F0EA; border-radius: 10px; }
+        body::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 10px; }
+        .dark body::-webkit-scrollbar-track { background: #12181F; }
+
+        /* ====== HEADER & FOOTER COLORS ====== */
+        .header-bg { background: #FFFFFF; border-color: #E8D5B7; }
+        .dark .header-bg { background: #12181F; border-color: #2A1E14; }
+        .footer-bg { background: #F5F0EA; }
+        .dark .footer-bg { background: #12181F; }
+        .footer-border { border-color: #C9A96E; }
+        .dark .footer-border { border-color: #C9A96E; }
+
+        .logo-text { color: #1E2A3A; }
+        .dark .logo-text { color: #F5F0EA; }
+        .logo-accent { color: #B8860B; }
+        .dark .logo-accent { color: #C9A96E; }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            color: #1E2A3A;
+            transition: color 0.2s;
+            font-size: 0.875rem;
+        }
+        .dark .nav-link { color: #F5F0EA; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2.5px;
+            background: #C9A96E;
+            transition: width 0.25s ease;
+            border-radius: 3px;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #B8860B !important; }
+        .dark .nav-link.active { color: #C9A96E !important; }
+
+        /* Dropdown */
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0;
+            min-width: 200px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 0.4rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            opacity: 0; visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid #E8D5B7;
+        }
+        .dark .dropdown-menu { background: #12181F; border-color: #2A1E14; }
+        .dropdown-trigger:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item {
+            display: flex; align-items: center;
+            padding: 0.5rem 1.2rem;
+            transition: all 0.2s;
+            color: #1E2A3A;
+            font-size: 0.85rem; font-weight: 500;
+        }
+        .dark .dropdown-item { color: #F5F0EA; }
+        .dropdown-item:hover { background: #F5F0EA; color: #B8860B; padding-left: 1.5rem; }
+        .dark .dropdown-item:hover { background: #1E1A14; color: #C9A96E; }
+        .dropdown-item i { margin-right: 0.75rem; width: 20px; color: #B8860B; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            background: #FFFFFF;
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 0 24px 24px;
+        }
+        .dark .mobile-menu { background: #12181F; }
+        .mobile-menu.open { max-height: 90vh; overflow-y: auto; scrollbar-width: none; }
+        .mobile-menu.open::-webkit-scrollbar { display: none; }
+
+        /* Buttons */
+        .btn-primary {
+            background: #B8860B; color: #FFFFFF;
+            font-weight: 600; border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+        .btn-primary:hover {
+            background: #8B6914;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(184, 134, 11, 0.4);
+        }
+        .btn-outline {
+            border: 2px solid #B8860B; color: #B8860B;
+            background: transparent; border-radius: 50px;
+            font-weight: 600; transition: all 0.3s;
+        }
+        .btn-outline:hover { background: #B8860B; color: #FFFFFF; transform: translateY(-2px); }
+        .dark .btn-outline { border-color: #C9A96E; color: #C9A96E; }
+        .dark .btn-outline:hover { background: #C9A96E; color: #0A0E14; }
+
+        /* Hero */
+        .hero-bg {
+            background: linear-gradient(135deg, #F5F0EA 0%, #E8D5B7 100%);
+        }
+        .dark .hero-bg {
+            background: linear-gradient(135deg, #0A0E14 0%, #12181F 100%);
+        }
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.08);
+            pointer-events: none;
+        }
+
+        /* Sections */
+        .section-badge {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dark .section-badge { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+        .section-divider { height: 3px; width: 60px; background: #C9A96E; margin: 0.5rem auto 1.5rem; border-radius: 4px; }
+
+        /* Story Card */
+        .story-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 1px solid #E8D5B7;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .dark .story-card { background: #12181F; border-color: #2A1E14; }
+        .story-card:hover {
+            border-color: #C9A96E;
+            box-shadow: 0 20px 40px -12px rgba(201, 169, 110, 0.25);
+            transform: translateY(-4px);
+        }
+
+        /* Mission/Vision Card */
+        .mv-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 1px solid #E8D5B7;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .dark .mv-card { background: #12181F; border-color: #2A1E14; }
+        .mv-card:hover {
+            border-color: #C9A96E;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(201, 169, 110, 0.15);
+        }
+        .mv-card .icon {
+            width: 64px; height: 64px;
+            border-radius: 18px;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1.2rem;
+        }
+        .dark .mv-card .icon { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+
+        /* Expertise Item */
+        .expertise-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid #E8D5B7;
+            transition: all 0.3s ease;
+        }
+        .dark .expertise-item { background: #12181F; border-color: #2A1E14; }
+        .expertise-item:hover {
+            border-color: #C9A96E;
+            box-shadow: 0 8px 20px -8px rgba(201, 169, 110, 0.2);
+        }
+        .expertise-item .icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .dark .expertise-item .icon { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+
+        /* Ethical Card */
+        .ethical-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 1.75rem;
+            border: 1px solid #E8D5B7;
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+        }
+        .dark .ethical-card { background: #12181F; border-color: #2A1E14; }
+        .ethical-card:hover {
+            border-color: #C9A96E;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(201, 169, 110, 0.15);
+        }
+        .ethical-card .icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 1rem;
+        }
+        .dark .ethical-card .icon { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+
+        /* Commitment */
+        .commit-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid #E8D5B7;
+            transition: all 0.3s ease;
+            align-items: flex-start;
+        }
+        .dark .commit-item { background: #12181F; border-color: #2A1E14; }
+        .commit-item:hover { border-color: #C9A96E; }
+        .commit-item .check {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.2);
+            color: #B8860B;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .dark .commit-item .check { background: rgba(201, 169, 110, 0.3); color: #C9A96E; }
+
+        /* Footer */
+        .social-icon-footer {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(30, 42, 58, 0.1);
+            color: #1E2A3A;
+            transition: all 0.3s;
+        }
+        .dark .social-icon-footer { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; }
+        .social-icon-footer:hover { background: #B8860B; color: #FFFFFF; transform: translateY(-3px); }
+
+        .footer-text { color: rgba(30, 42, 58, 0.7); transition: color 0.2s; }
+        .dark .footer-text { color: rgba(255, 255, 255, 0.7); }
+        .footer-text:hover { color: #B8860B; }
+        .dark .footer-text:hover { color: #C9A96E; }
+        .footer-heading { color: #1E2A3A; }
+        .dark .footer-heading { color: #F5F0EA; }
+        .footer-copyright { color: rgba(30, 42, 58, 0.5); }
+        .dark .footer-copyright { color: rgba(255, 255, 255, 0.5); }
+
+        /* RTL Support */
+        [dir="rtl"] .ml-auto { margin-left: 0 !important; margin-right: auto !important; }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+        [dir="rtl"] .dropdown-item i { margin-right: 0; margin-left: 0.75rem; }
+        [dir="rtl"] .dropdown-item:hover { padding-left: 1.2rem; padding-right: 1.5rem; }
+
+        /* Toggle spacing */
+        .toggle-spacing { gap: 0.5rem; }
+        @media (min-width: 768px) { .toggle-spacing { gap: 0.75rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 header-bg border-b shadow-sm transition-colors">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-20 md:h-22">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+                    <div class="w-10 h-10 bg-[#B8860B] rounded-xl flex items-center justify-center shadow-lg shadow-[#B8860B]/25 group-hover:scale-105 transition">
+                        <i class="fas fa-gem text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden xl:flex items-center gap-1 lg:gap-2 ml-auto rtl:ml-0 rtl:mr-auto">
+                    <div class="dropdown-trigger relative">
+                        <button class="nav-link px-3 py-2 flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-[10px] opacity-60"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="index.html"><i class="fas fa-gem"></i> Home 1</a>
+                            <a class="dropdown-item" href="home2.html"><i class="fas fa-gem"></i> Home 2</a>
+                        </div>
+                    </div>
+
+                    <a class="nav-link active px-3 py-2" href="about.html">About Us</a>
+                    <a class="nav-link px-3 py-2" href="collections.html">Collections</a>
+                    <a class="nav-link px-3 py-2" href="custom.html">Custom</a>
+                    <a class="nav-link px-3 py-2" href="products.html">Products</a>
+                    <a class="nav-link px-3 py-2" href="certification.html">Certification</a>
+                    <a class="nav-link px-3 py-2" href="contact.html">Contact Us</a>
+
+                    <div class="flex items-center toggle-spacing ml-2">
+                        <button id="theme-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button id="rtl-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center text-sm font-bold">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-2 ml-3">
+                        <a href="contact.html#enquiry" class="px-5 py-2 bg-[#B8860B] text-white rounded-full text-sm font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25">Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle" class="xl:hidden w-10 h-10 rounded-full bg-[#B8860B] text-white flex items-center justify-center shadow-md shadow-[#B8860B]/25">
+                    <i class="fas fa-bars text-base"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu xl:hidden">
+                <div class="py-3 px-2 space-y-1">
+                    <div class="py-1">
+                        <button onclick="document.getElementById('home-mobile-drop').classList.toggle('hidden'); document.getElementById('home-mobile-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]">
+                            <span>Home</span>
+                            <i id="home-mobile-icon" class="fas fa-chevron-down text-xs opacity-60 transition-transform duration-300"></i>
+                        </button>
+                        <div id="home-mobile-drop" class="hidden pl-4 space-y-1 mt-1">
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="index.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 1</a>
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="home2.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 2</a>
+                        </div>
+                    </div>
+
+                    <a class="block py-2.5 px-4 font-medium text-[#B8860B] dark:text-[#C9A96E] bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]" href="about.html">About Us</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="collections.html">Collections</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="custom.html">Custom</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="products.html">Products</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="certification.html">Certification</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="contact.html">Contact Us</a>
+
+                    <div class="flex flex-col gap-2 pt-4 mt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        <a class="text-center py-2.5 bg-[#B8860B] text-white rounded-full font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25" href="contact.html#enquiry">Enquire</a>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <button id="mobile-theme-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i> Theme</button>
+                        <button id="mobile-rtl-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-exchange-alt"></i> RTL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== SECTION 1: HERO ======== -->
+    <section class="min-h-[60vh] flex items-center pt-24 pb-16 md:pt-28 md:pb-20 relative overflow-hidden hero-bg">
+        <div class="hero-shape w-96 h-96 -top-20 -right-20"></div>
+        <div class="hero-shape w-80 h-80 bottom-10 -left-20"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center animate-slide-up">
+                <span class="section-badge"><i class="fas fa-gem text-[10px] mr-1"></i> Our Journey</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold mt-4 mb-5 leading-tight text-[#1E2A3A] dark:text-white">
+                    A Passion for <span class="text-[#B8860B]">Gemstones</span>,<br>A Legacy of <span class="text-[#B8860B]">Craftsmanship</span>
+                </h1>
+                <p class="text-lg md:text-xl text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 max-w-2xl mx-auto mb-8">
+                    For over two decades, Gemora has been dedicated to bringing the earth's most beautiful treasures to those who appreciate their timeless elegance.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#story" class="btn-primary px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base shadow-lg shadow-[#B8860B]/25">
+                        <i class="fas fa-book-open"></i> Read Our Story
+                    </a>
+                    <a href="collections.html" class="btn-outline px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base">Explore Collections</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 2: OUR STORY ======== -->
+    <section id="story" class="py-20 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Brand History</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Our <span class="text-[#B8860B]">Story</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">The inspiration behind Gemora and our journey through the world of fine gemstones.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto items-center">
+                <!-- Image -->
+                <div class="relative group">
+                    <div class="story-card overflow-hidden">
+                        <img src="assets/about-story.jpg" alt="Gemora artisan workshop" class="w-full h-80 md:h-[420px] object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 hidden sm:flex items-center gap-2.5 bg-white dark:bg-[#12181F] border border-[#C9A96E] px-4 py-2.5 rounded-2xl shadow-xl">
+                        <i class="fas fa-gem text-[#B8860B] text-base"></i>
+                        <div>
+                            <span class="block text-[11px] font-bold text-[#1E2A3A] dark:text-white uppercase tracking-wider">Master Atelier</span>
+                            <span class="block text-[10px] text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Handcrafted Since 2003</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text -->
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-display font-bold text-[#1E2A3A] dark:text-white mb-4">From a Small Workshop to a Trusted Name</h3>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 leading-relaxed mb-4">
+                        Gemora was founded in 2003 by a family of gemologists and artisans with a shared passion for rare and beautiful stones. What began as a small workshop in the heart of the city has grown into a globally recognized name in fine gemstone jewelry.
+                    </p>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 leading-relaxed mb-4">
+                        Our founder, a third-generation gemologist, spent years traveling to remote mines across Sri Lanka, Myanmar, Colombia, and Madagascar, building relationships with local miners and cutters. These relationships became the foundation of our commitment to ethical sourcing and exceptional quality.
+                    </p>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 leading-relaxed">
+                        Today, every piece of Gemora jewelry carries that same spirit of adventure, craftsmanship, and respect for nature's artistry.
+                    </p>
+                    <div class="flex flex-wrap gap-6 mt-6">
+                        <div class="text-center">
+                            <span class="text-3xl font-display font-bold text-[#B8860B]">20+</span>
+                            <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1">Years of Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-3xl font-display font-bold text-[#B8860B]">50+</span>
+                            <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1">Countries Sourced</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-3xl font-display font-bold text-[#B8860B]">10K+</span>
+                            <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 3: OUR MISSION & VISION ======== -->
+    <section class="py-20 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Purpose &amp; Direction</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Our <span class="text-[#B8860B]">Mission</span> &amp; <span class="text-[#B8860B]">Vision</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Our commitment to quality, authenticity, and customer satisfaction.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="mv-card">
+                    <div class="icon"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="text-xl font-display font-bold text-[#1E2A3A] dark:text-white mb-3">Our Mission</h3>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">
+                        To make the world's most beautiful and ethically sourced gemstones accessible to everyone. We are committed to providing our customers with exceptional quality, transparent pricing, and a personalized experience that celebrates the unique beauty of every stone.
+                    </p>
+                </div>
+                <div class="mv-card">
+                    <div class="icon"><i class="fas fa-eye"></i></div>
+                    <h3 class="text-xl font-display font-bold text-[#1E2A3A] dark:text-white mb-3">Our Vision</h3>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">
+                        To be the world's most trusted destination for gemstone jewelry, recognized for our unwavering commitment to ethical sourcing, exceptional craftsmanship, and customer satisfaction. We envision a future where every piece of jewelry tells a story of beauty, integrity, and responsible luxury.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 4: GEMSTONE EXPERTISE ======== -->
+    <section class="py-20 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Knowledge &amp; Craft</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Gemstone <span class="text-[#B8860B]">Expertise</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Our deep knowledge of precious and semi-precious stones sets us apart.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+                <div class="expertise-item">
+                    <div class="icon"><i class="fas fa-gem"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Precious Stones</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Diamond, Ruby, Sapphire, and Emerald — we source only the finest quality precious stones, each carefully evaluated for color, clarity, cut, and carat weight.</p>
+                    </div>
+                </div>
+                <div class="expertise-item">
+                    <div class="icon"><i class="fas fa-star"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Semi-Precious Stones</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Amethyst, Citrine, Topaz, Garnet, Peridot, and many more — we offer a stunning range of semi-precious stones to suit every style and budget.</p>
+                    </div>
+                </div>
+                <div class="expertise-item">
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Gemological Assessment</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Every stone is evaluated by our in-house gemologists using state-of-the-art equipment to ensure authenticity, quality, and value.</p>
+                    </div>
+                </div>
+                <div class="expertise-item">
+                    <div class="icon"><i class="fas fa-cut"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Master Cutting &amp; Setting</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Our artisans use traditional techniques combined with modern precision to cut and set each stone, maximizing its natural beauty and brilliance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gemological Lab Banner -->
+            <div class="mt-10 rounded-2xl overflow-hidden border border-[#E8D5B7] dark:border-[#2A1E14] bg-white dark:bg-[#12181F] relative max-w-5xl mx-auto shadow-sm">
+                <div class="grid md:grid-cols-3">
+                    <div class="md:col-span-1 relative h-56 md:h-auto md:min-h-[240px] overflow-hidden">
+                        <img src="assets/about-expertise.jpg" alt="Certified cut gemstones" class="w-full h-full md:absolute md:inset-0 object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="md:col-span-2 p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-[#12181F]">
+                        <span class="section-badge mb-2 self-start">In-House Gem Lab</span>
+                        <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">Microscopic Clarity &amp; Refractive Index Verification</h4>
+                        <p class="text-xs text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 leading-relaxed mb-4">
+                            Before any rough mineral or cut gemstone enters our jewelry catalog, it passes refractometer, spectroscope, and polariscope examinations to confirm geological origin, crystal integrity, and natural color authenticity.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E]">
+                            <span><i class="fas fa-check-circle mr-1"></i> GIA Standards</span>
+                            <span><i class="fas fa-check-circle mr-1"></i> Conflict-Free Protocol</span>
+                            <span><i class="fas fa-check-circle mr-1"></i> 100% Origin Traced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 5: ETHICAL SOURCING ======== -->
+    <section class="py-20 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Responsibility</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Ethical <span class="text-[#B8860B]">Sourcing</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Responsible sourcing and sustainability practices are at the heart of everything we do.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="ethical-card">
+                    <div class="icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Conflict-Free</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">We only source gemstones from conflict-free regions and work directly with responsible miners.</p>
+                </div>
+                <div class="ethical-card">
+                    <div class="icon"><i class="fas fa-leaf"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Sustainable Practices</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Our mining partners follow strict environmental guidelines to minimize impact on local ecosystems.</p>
+                </div>
+                <div class="ethical-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Fair Trade</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">We believe in fair wages and safe working conditions for everyone involved in our supply chain.</p>
+                </div>
+                <div class="ethical-card">
+                    <div class="icon"><i class="fas fa-recycle"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Recycled Metals</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Our gold and silver are sourced from certified recycled refineries whenever possible.</p>
+                </div>
+            </div>
+
+            <!-- Sourcing Geology Banner -->
+            <div class="mt-10 rounded-2xl overflow-hidden border border-[#E8D5B7] dark:border-[#2A1E14] bg-white dark:bg-[#12181F] relative max-w-6xl mx-auto shadow-sm">
+                <div class="grid md:grid-cols-3">
+                    <div class="md:col-span-2 p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-[#12181F] order-2 md:order-1">
+                        <span class="section-badge mb-2 self-start">Sustainable Geology</span>
+                        <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">From Artisanal Mines to Transparent Supply Chains</h4>
+                        <p class="text-xs text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 leading-relaxed mb-4">
+                            We partner directly with artisanal mining cooperatives across Sri Lanka, Madagascar, and Colombia. By eliminating opaque intermediaries, we guarantee miners receive above-market fair compensation while enforcing environmental restoration after mineral extraction.
+                        </p>
+                        <a href="certification.html" class="inline-flex items-center gap-2 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:underline self-start">
+                            View Certification Credentials <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                    <div class="md:col-span-1 relative h-56 md:h-auto md:min-h-[240px] overflow-hidden order-1 md:order-2">
+                        <img src="assets/about-ethical.jpg" alt="Natural raw mineral crystals" class="w-full h-full md:absolute md:inset-0 object-cover hover:scale-105 transition duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 6: OUR COMMITMENT ======== -->
+    <section class="py-20 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Customer First</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Our <span class="text-[#B8860B]">Commitment</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Customer satisfaction and quality assurance are our top priorities.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+                <div class="commit-item">
+                    <div class="check"><i class="fas fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Lifetime Warranty</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Every piece of Gemora jewelry comes with a lifetime warranty against manufacturing defects.</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="check"><i class="fas fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Free Returns &amp; Exchanges</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Not completely satisfied? Return or exchange your purchase within 30 days, no questions asked.</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="check"><i class="fas fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Complimentary Shipping</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Enjoy free, fully insured shipping on all orders over $500, worldwide.</p>
+                    </div>
+                </div>
+                <div class="commit-item">
+                    <div class="check"><i class="fas fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-1">Personalized Service</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Our gemstone experts are available to help you find the perfect piece for any occasion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="contact.html" class="btn-primary px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base shadow-lg shadow-[#B8860B]/25">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer-bg pt-16 pb-8 border-t-4 footer-border">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="text-center md:text-start">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <div class="w-9 h-9 bg-[#B8860B] rounded-xl flex items-center justify-center"><i class="fas fa-gem text-white text-sm"></i></div>
+                        <span class="text-xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 text-sm">Premium gemstone &amp; mineral jewelry for your radiant self.</p>
+                    <div class="flex justify-center md:justify-start gap-3 mt-4">
+                        <a href="#" class="social-icon-footer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="collections.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Collections</a></li>
+                        <li><a href="products.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Products</a></li>
+                        <li><a href="custom.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Custom</a></li>
+                        <li><a href="certification.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Certification</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">About Us</a></li>
+                        <li><a href="services.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Services</a></li>
+                        <li><a href="contact.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Contact Us</a></li>
+                        <li><a href="contact.html#enquiry" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Enquire</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-map-marker-alt text-[#B8860B] mt-1"></i><span>123 Gemstone Ave, Jewel City</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-phone text-[#B8860B]"></i><span>(555) 987-6543</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-envelope text-[#B8860B]"></i><span>hello@gemora.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-[#1E2A3A]/10 dark:border-white/10 text-center text-sm footer-copyright">
+                <p>&copy; 2026 Gemora Gemstone &amp; Mineral Jewelry. <i class="fas fa-gem text-[#B8860B] mx-1"></i> Radiate with confidence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======== SCRIPTS ======== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle
+            const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+            themeBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                });
+            });
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+            // RTL
+            function setRTL(isRTL) {
+                const html = document.documentElement;
+                if (isRTL === 'rtl' || isRTL === true) {
+                    html.setAttribute('dir', 'rtl');
+                    localStorage.setItem('dir', 'rtl');
+                } else {
+                    html.setAttribute('dir', 'ltr');
+                    localStorage.setItem('dir', 'ltr');
+                }
+            }
+            const savedDir = localStorage.getItem('dir');
+            if (savedDir === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+            else document.documentElement.setAttribute('dir', 'ltr');
+
+            const rtlBtn = document.getElementById('rtl-toggle');
+            if (rtlBtn) {
+                rtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                });
+            }
+            const mobileRtlBtn = document.getElementById('mobile-rtl-toggle');
+            if (mobileRtlBtn) {
+                mobileRtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const mobileToggle = document.getElementById('mobile-toggle');
+                    if (mobileMenu && mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle && mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+
+            // Mobile menu
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    const icon = mobileToggle.querySelector('i');
+                    if (mobileMenu.classList.contains('open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                mobileMenu.querySelectorAll('a:not(#mobile-rtl-toggle)').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

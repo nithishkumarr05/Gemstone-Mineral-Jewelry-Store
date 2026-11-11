@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemora · Gemstone & Mineral Jewelry</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/fav.jpeg" type="image/jpeg">
+    <!-- Tailwind CSS via CDN -->
+      <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#1E2A3A',
+                            secondary: '#B8860B',
+                            accent: '#C9A96E',
+                            'accent-light': '#E8D5B7',
+                            'accent-dark': '#8B6914',
+                            blush: '#F5F0EA',
+                            rose: '#C9A96E',
+                            gold: '#B8860B',
+                            bg: '#F5F0EA',
+                            card: '#FFFFFF',
+                            dark: '#0A0E14',
+                            'dark-card': '#12181F',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+                        slideUp: { '0%': { transform: 'translateY(40px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        bounceGentle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.7' } },
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(circle at 20% 30%, rgba(201,169,110,0.08) 0%, transparent 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F0EA;
+            color: #1E2A3A;
+        }
+        .dark body {
+            background: #0A0E14;
+            color: #F5F0EA;
+        }
+        /* Scrollbar */
+        body::-webkit-scrollbar {
+            width: 6px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #F5F0EA;
+            border-radius: 10px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: #C9A96E;
+            border-radius: 10px;
+        }
+        .dark body::-webkit-scrollbar-track {
+            background: #12181F;
+        }
+
+        /* ====== CONSISTENT HEADER & FOOTER COLORS ====== */
+        .header-bg {
+            background: #FFFFFF;
+            border-color: #E8D5B7;
+        }
+        .dark .header-bg {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .footer-bg {
+            background: #F5F0EA;
+        }
+        .dark .footer-bg {
+            background: #12181F;
+        }
+        .footer-border {
+            border-color: #C9A96E;
+        }
+        .dark .footer-border {
+            border-color: #C9A96E;
+        }
+
+        /* Logo text colors */
+        .logo-text {
+            color: #1E2A3A;
+        }
+        .dark .logo-text {
+            color: #F5F0EA;
+        }
+        .logo-accent {
+            color: #B8860B;
+        }
+        .dark .logo-accent {
+            color: #C9A96E;
+        }
+
+        /* Navigation links */
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            color: #1E2A3A;
+            transition: color 0.2s;
+            font-size: 0.875rem;
+        }
+        .dark .nav-link {
+            color: #F5F0EA;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: #C9A96E;
+            transition: width 0.25s ease;
+            border-radius: 3px;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: #B8860B !important;
+        }
+        .dark .nav-link.active {
+            color: #C9A96E !important;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 0.4rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid #E8D5B7;
+        }
+        .dark .dropdown-menu {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .dropdown-trigger:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1.2rem;
+            transition: all 0.2s;
+            color: #1E2A3A;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .dark .dropdown-item {
+            color: #F5F0EA;
+        }
+        .dropdown-item:hover {
+            background: #F5F0EA;
+            color: #B8860B;
+            padding-left: 1.5rem;
+        }
+        .dark .dropdown-item:hover {
+            background: #1E1A14;
+            color: #C9A96E;
+        }
+        .dropdown-item i {
+            margin-right: 0.75rem;
+            width: 20px;
+            color: #B8860B;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            background: #FFFFFF;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 0 24px 24px;
+        }
+        .dark .mobile-menu {
+            background: #12181F;
+        }
+        .mobile-menu.open {
+            max-height: 90vh;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+        .mobile-menu.open::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: #B8860B;
+            color: #FFFFFF;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+        .btn-primary:hover {
+            background: #8B6914;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(184, 134, 11, 0.4);
+        }
+        .btn-outline {
+            border: 2px solid #B8860B;
+            color: #B8860B;
+            background: transparent;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background: #B8860B;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+        .dark .btn-outline {
+            border-color: #C9A96E;
+            color: #C9A96E;
+        }
+        .dark .btn-outline:hover {
+            background: #C9A96E;
+            color: #0A0E14;
+        }
+
+        /* Hero */
+        .hero-bg {
+            background: linear-gradient(135deg, #F5F0EA 0%, #E8D5B7 100%);
+        }
+        .dark .hero-bg {
+            background: linear-gradient(135deg, #0A0E14 0%, #12181F 100%);
+        }
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.08);
+            pointer-events: none;
+        }
+
+        /* Cards */
+        .product-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid #E8D5B7;
+            overflow: hidden;
+        }
+        .dark .product-card {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(201, 169, 110, 0.25);
+            border-color: #C9A96E;
+        }
+        .product-card .product-image {
+            height: 200px;
+            background: #F5F0EA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            background-size: cover;
+            background-position: center;
+        }
+        .dark .product-card .product-image {
+            background: #1E1A14;
+        }
+
+        /* Skin Type / Gemstone Card */
+        .skin-card {
+            position: relative;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid #E8D5B7;
+            overflow: hidden;
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .dark .skin-card {
+            border-color: #2A1E14;
+        }
+        .skin-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(201, 169, 110, 0.4);
+            border-color: #C9A96E;
+        }
+        .skin-card .skin-image {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+        .skin-card:hover .skin-image {
+            transform: scale(1.08);
+        }
+        .skin-card .skin-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(10, 14, 20, 0.9) 0%, rgba(10, 14, 20, 0.4) 50%, rgba(10, 14, 20, 0) 100%);
+            z-index: 2;
+        }
+        .skin-card .skin-content {
+            position: relative;
+            z-index: 3;
+            padding: 1.8rem;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        /* Theory Card (for gemstone theory & gemology) */
+        .theory-card {
+            position: relative;
+            background: #F5F0EA;
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid #E8D5B7;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        @media (min-width: 768px) {
+            .theory-grid {
+                row-gap: 0;
+            }
+            .theory-card {
+                display: grid;
+                grid-template-rows: subgrid;
+                grid-row: span 5;
+                row-gap: 0;
+            }
+        }
+        .dark .theory-card {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .theory-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(201, 169, 110, 0.25);
+            border-color: #C9A96E;
+        }
+        .skin-card .skin-content h4 {
+            min-height: 3.5rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        /* Footer Social Icons */
+        .social-icon-footer {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(30, 42, 58, 0.1);
+            color: #1E2A3A;
+            transition: all 0.3s;
+        }
+        .dark .social-icon-footer {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+        }
+        .social-icon-footer:hover {
+            background: #B8860B;
+            color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        /* RTL Support */
+        [dir="rtl"] .ml-auto {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+        [dir="rtl"] .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+        [dir="rtl"] .dropdown-item i {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+        [dir="rtl"] .dropdown-item:hover {
+            padding-left: 1.2rem;
+            padding-right: 1.5rem;
+        }
+
+        /* Sections */
+        .section-badge {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dark .section-badge {
+            background: rgba(201, 169, 110, 0.25);
+            color: #C9A96E;
+        }
+        .section-divider {
+            height: 3px;
+            width: 60px;
+            background: #C9A96E;
+            margin: 0.5rem auto 1.5rem;
+            border-radius: 4px;
+        }
+
+        /* Testimonial */
+        .testimonial-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 1.8rem;
+            border-left: 5px solid #C9A96E;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .dark .testimonial-card {
+            background: #12181F;
+        }
+
+        .why-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid #E8D5B7;
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .why-card h4 {
+            min-height: 3rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .dark .why-card {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .why-card:hover {
+            border-color: #C9A96E;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(201, 169, 110, 0.15);
+        }
+        .why-card .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 0.8rem;
+        }
+        .dark .why-card .icon {
+            background: rgba(201, 169, 110, 0.25);
+            color: #C9A96E;
+        }
+
+        /* Toggle spacing */
+        .toggle-spacing {
+            gap: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .toggle-spacing {
+                gap: 0.75rem;
+            }
+        }
+
+        /* Footer text colors */
+        .footer-text {
+            color: rgba(30, 42, 58, 0.7);
+        }
+        .dark .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .footer-text:hover {
+            color: #B8860B;
+        }
+        .dark .footer-text:hover {
+            color: #C9A96E;
+        }
+        .footer-heading {
+            color: #1E2A3A;
+        }
+        .dark .footer-heading {
+            color: #F5F0EA;
+        }
+        .footer-copyright {
+            color: rgba(30, 42, 58, 0.5);
+        }
+        .dark .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Gemstone-specific image placeholders */
+        .gem-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #B8860B;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 header-bg border-b shadow-sm transition-colors">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-20 md:h-22">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+                    <div class="w-10 h-10 bg-[#B8860B] rounded-xl flex items-center justify-center shadow-lg shadow-[#B8860B]/25 group-hover:scale-105 transition">
+                        <i class="fas fa-gem text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden xl:flex items-center gap-1 lg:gap-2 ml-auto rtl:ml-0 rtl:mr-auto">
+                    <!-- Home Dropdown -->
+                    <div class="dropdown-trigger relative">
+                        <button class="nav-link active px-3 py-2 flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-[10px] opacity-60"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="index.html"><i class="fas fa-gem"></i> Home 1</a>
+                            <a class="dropdown-item" href="home2.html"><i class="fas fa-gem"></i> Home 2</a>
+                        </div>
+                    </div>
+
+                    <a class="nav-link px-3 py-2" href="about.html">About Us</a>
+                    <a class="nav-link px-3 py-2" href="collections.html">Collections</a>
+                    <a class="nav-link px-3 py-2" href="custom.html">Custom</a>
+                    <a class="nav-link px-3 py-2" href="products.html">Products</a>
+                    <a class="nav-link px-3 py-2" href="certification.html">Certification</a>
+                    <a class="nav-link px-3 py-2" href="contact.html">Contact Us</a>
+
+                    <!-- Theme & RTL Toggles with spacing -->
+                    <div class="flex items-center toggle-spacing ml-2">
+                        <button id="theme-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button id="rtl-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center text-sm font-bold">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+
+                    <!-- Enquire CTA Button -->
+                    <div class="flex items-center gap-2 ml-3">
+                        <a href="contact.html#enquiry" class="px-5 py-2 bg-[#B8860B] text-white rounded-full text-sm font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25">Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle" class="xl:hidden w-10 h-10 rounded-full bg-[#B8860B] text-white flex items-center justify-center shadow-md shadow-[#B8860B]/25">
+                    <i class="fas fa-bars text-base"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu xl:hidden">
+                <div class="py-3 px-2 space-y-1">
+                    <!-- Home with sub -->
+                    <div class="py-1">
+                        <button onclick="document.getElementById('home-mobile-drop').classList.toggle('hidden'); document.getElementById('home-mobile-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]">
+                            <span>Home</span>
+                            <i id="home-mobile-icon" class="fas fa-chevron-down text-xs opacity-60 transition-transform duration-300"></i>
+                        </button>
+                        <div id="home-mobile-drop" class="hidden pl-4 space-y-1 mt-1">
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]" href="index.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 1</a>
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="home2.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 2</a>
+                        </div>
+                    </div>
+
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="about.html">About Us</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="collections.html">Collections</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="custom.html">Custom</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="products.html">Products</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="certification.html">Certification</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="contact.html">Contact Us</a>
+
+                    <div class="flex flex-col gap-2 pt-4 mt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        <a class="text-center py-2.5 bg-[#B8860B] text-white rounded-full font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25" href="contact.html#enquiry">Enquire</a>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <button id="mobile-theme-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i> Theme</button>
+                        <button id="mobile-rtl-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-exchange-alt"></i> RTL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== SECTION 1: HERO ======== -->
+    <section class="min-h-screen flex items-center pt-24 pb-16 md:pt-28 md:pb-20 relative overflow-hidden hero-bg">
+        <div class="hero-shape w-96 h-96 -top-20 -right-20"></div>
+        <div class="hero-shape w-80 h-80 bottom-10 -left-20"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center animate-slide-up">
+                <span class="section-badge"><i class="fas fa-gem text-[10px] mr-1"></i> Timeless Elegance</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold mt-4 mb-5 leading-tight text-[#1E2A3A] dark:text-white">
+                    Discover <span class="text-[#B8860B]">Gemstone</span> Jewelry<br>that <span class="text-[#B8860B]">Radiates</span> Your Story
+                </h1>
+                <p class="text-lg md:text-xl text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 max-w-2xl mx-auto mb-8">
+                    Explore our curated collection of rare gemstones and mineral jewelry. Each piece is a masterpiece of nature, crafted to perfection.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="collections.html" class="btn-primary px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base shadow-lg shadow-[#B8860B]/25 animate-bounce-gentle">
+                        <i class="fas fa-gem"></i> Explore Collections
+                    </a>
+                    <a href="certification.html" class="btn-outline px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base">Certified Authenticity</a>
+                </div>
+                <div class="mt-10 flex flex-wrap justify-center gap-8 text-sm">
+                    <div class="flex items-center gap-2"><i class="fas fa-certificate text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">GIA Certified</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-hand-sparkles text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">Ethically Sourced</span></div>
+                    <div class="flex items-center gap-2"><i class="fas fa-award text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">Master Craftsmanship</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 2: EXPLORE GEMSTONE COLLECTIONS ======== -->
+    <section class="py-20 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Curated Collections</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Explore <span class="text-[#B8860B]">Gemstone</span> Collections</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Ruby, Sapphire, Emerald, Amethyst, and other rare gemstones.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Ruby -->
+                <div class="skin-card group">
+                    <div class="skin-image" style="background-image: url('assets/ruby-collection.jpg');"></div>
+                    <div class="skin-overlay opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="skin-content">
+                        <h4 class="font-bold text-white text-xl mb-1 drop-shadow-md">Ruby</h4>
+                        <p class="text-sm text-white/90 drop-shadow-md min-h-[2.5rem]">Passion &amp; vitality in every stone</p>
+                        <a href="collections.html" class="inline-block mt-3 text-sm font-semibold text-[#E8D5B7] hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 duration-300">Explore →</a>
+                    </div>
+                </div>
+                <!-- Sapphire -->
+                <div class="skin-card group">
+                    <div class="skin-image" style="background-image: url('assets/sapphire-collection.jpg');"></div>
+                    <div class="skin-overlay opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="skin-content">
+                        <h4 class="font-bold text-white text-xl mb-1 drop-shadow-md">Sapphire</h4>
+                        <p class="text-sm text-white/90 drop-shadow-md min-h-[2.5rem]">Wisdom &amp; royal elegance</p>
+                        <a href="collections.html" class="inline-block mt-3 text-sm font-semibold text-[#E8D5B7] hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 duration-300">Explore →</a>
+                    </div>
+                </div>
+                <!-- Emerald -->
+                <div class="skin-card group">
+                    <div class="skin-image" style="background-image: url('assets/emerald-collection.jpg');"></div>
+                    <div class="skin-overlay opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="skin-content">
+                        <h4 class="font-bold text-white text-xl mb-1 drop-shadow-md">Emerald</h4>
+                        <p class="text-sm text-white/90 drop-shadow-md min-h-[2.5rem]">Rebirth &amp; timeless beauty</p>
+                        <a href="collections.html" class="inline-block mt-3 text-sm font-semibold text-[#E8D5B7] hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 duration-300">Explore →</a>
+                    </div>
+                </div>
+                <!-- Amethyst -->
+                <div class="skin-card group">
+                    <div class="skin-image" style="background-image: url('assets/amethyst-collection.jpg');"></div>
+                    <div class="skin-overlay opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="skin-content">
+                        <h4 class="font-bold text-white text-xl mb-1 drop-shadow-md">Amethyst</h4>
+                        <p class="text-sm text-white/90 drop-shadow-md min-h-[2.5rem]">Calm &amp; spiritual clarity</p>
+                        <a href="collections.html" class="inline-block mt-3 text-sm font-semibold text-[#E8D5B7] hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 duration-300">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 3: FEATURED GEMSTONE JEWELRY ======== -->
+    <section class="py-20 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Best Sellers</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Featured <span class="text-[#B8860B]">Gemstone Jewelry</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Best-selling rings, necklaces, earrings, and bracelets.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Ring -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('assets/ruby-ring.jpg');"></div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white">Ruby Ring</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">18k Gold &amp; Burmese Ruby</p>
+                        <p class="text-lg font-bold text-[#B8860B] mt-2">$2,450</p>
+                        <a href="products.html" class="inline-block mt-2 text-xs font-semibold text-[#B8860B] hover:underline">View Details →</a>
+                    </div>
+                </div>
+                <!-- Necklace -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('assets/sapphire-necklace.jpg');"></div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white">Sapphire Necklace</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Platinum &amp; Ceylon Sapphire</p>
+                        <p class="text-lg font-bold text-[#B8860B] mt-2">$3,890</p>
+                        <a href="products.html" class="inline-block mt-2 text-xs font-semibold text-[#B8860B] hover:underline">View Details →</a>
+                    </div>
+                </div>
+                <!-- Earrings -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('assets/emerald-earrings.jpg');"></div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white">Emerald Earrings</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">White Gold &amp; Colombian Emerald</p>
+                        <p class="text-lg font-bold text-[#B8860B] mt-2">$1,975</p>
+                        <a href="products.html" class="inline-block mt-2 text-xs font-semibold text-[#B8860B] hover:underline">View Details →</a>
+                    </div>
+                </div>
+                <!-- Bracelet -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('assets/amethyst-bracelet.jpg');"></div>
+                    <div class="p-5 text-center">
+                        <h4 class="font-bold text-[#1E2A3A] dark:text-white">Amethyst Bracelet</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Sterling Silver &amp; Amethyst</p>
+                        <p class="text-lg font-bold text-[#B8860B] mt-2">$890</p>
+                        <a href="products.html" class="inline-block mt-2 text-xs font-semibold text-[#B8860B] hover:underline">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 4: DISCOVER THE BEAUTY OF GEMSTONES ======== -->
+    <section class="py-20 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Gemological Theory</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Discover the <span class="text-[#B8860B]">Beauty</span> of Gemstones</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Understanding the mineralogical science, ethical provenance, and natural individuality behind every gemstone.</p>
+            </div>
+            <div class="theory-grid grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Color Theory -->
+                <div class="theory-card text-start">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#B8860B] dark:text-[#C9A96E]">01 · Chromophores &amp; Light</span>
+                        <div class="w-11 h-11 rounded-2xl bg-[#B8860B]/15 dark:bg-[#C9A96E]/20 flex items-center justify-center text-[#B8860B] dark:text-[#C9A96E]">
+                            <i class="fas fa-palette text-lg"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-display font-bold text-[#1E2A3A] dark:text-white text-xl mb-3">Vibrant Colors</h4>
+                    <p class="text-sm text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                        A gemstone's hue originates from selective light absorption by trace transition elements—such as chromium in fiery rubies and rich emeralds, or iron and titanium in deep blue sapphires—interacting with the crystal lattice.
+                    </p>
+                    <ul class="space-y-2 text-xs text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-4">
+                        <li class="flex items-start gap-2"><i class="fas fa-circle text-[5px] text-[#B8860B] mt-1.5"></i><span><strong>Pleochroism:</strong> Color shifts across crystal axes as light travels through anisotropic structures.</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-circle text-[5px] text-[#B8860B] mt-1.5"></i><span><strong>Optical Dispersion:</strong> High refractive indices split white light into spectral brilliance.</span></li>
+                    </ul>
+                    <div class="mt-6 pt-3">
+                        <a href="collections.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:underline">Explore Color Collections →</a>
+                    </div>
+                </div>
+                <!-- Geological Origin -->
+                <div class="theory-card text-start">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#B8860B] dark:text-[#C9A96E]">02 · Geological Provenance</span>
+                        <div class="w-11 h-11 rounded-2xl bg-[#B8860B]/15 dark:bg-[#C9A96E]/20 flex items-center justify-center text-[#B8860B] dark:text-[#C9A96E]">
+                            <i class="fas fa-mountain text-lg"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-display font-bold text-[#1E2A3A] dark:text-white text-xl mb-3">Ethical Origins</h4>
+                    <p class="text-sm text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                        Formed over millions of years beneath Earth's crust under extreme pressure, heat, and hydrothermal fluids, natural minerals carry distinct geochemical signatures tied to their historic mining regions.
+                    </p>
+                    <ul class="space-y-2 text-xs text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-4">
+                        <li class="flex items-start gap-2"><i class="fas fa-circle text-[5px] text-[#B8860B] mt-1.5"></i><span><strong>Traceable Sourcing:</strong> Direct partnerships with regulated, conflict-free artisanal and regional mines.</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-circle text-[5px] text-[#B8860B] mt-1.5"></i><span><strong>Land Stewardship:</strong> Commitment to low-impact extraction and fair community wages.</span></li>
+                    </ul>
+                    <div class="mt-6 pt-3">
+                        <a href="certification.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:underline">Learn About Provenance →</a>
+                    </div>
+                </div>
+                <!-- Crystalline Uniqueness -->
+                <div class="theory-card text-start">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-[#B8860B] dark:text-[#C9A96E]">03 · Atomic Architecture</span>
+                        <div class="w-11 h-11 rounded-2xl bg-[#B8860B]/15 dark:bg-[#C9A96E]/20 flex items-center justify-center text-[#B8860B] dark:text-[#C9A96E]">
+                            <i class="fas fa-gem text-lg"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-display font-bold text-[#1E2A3A] dark:text-white text-xl mb-3">One-of-a-Kind</h4>
+                    <p class="text-sm text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                        Every natural crystal grows in a unique geological environment, creating unmistakable internal characteristics—from delicate <em>jardin</em> in emeralds to fine rutile silk in corundum—that act as nature's fingerprint.
+                    </p>
+                    <ul class="space-y-2 text-xs text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-4">
+                        <li class="flex items-start gap-2"><i class="fas fa-circle text-[5px] text-[#B8860B] mt-1.5"></i><span><strong>Natural Inclusions:</strong> Microscopic mineral markers that verify authentic, un-synthesized origin.</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-circle text-[5px] text-[#B8860B] mt-1.5"></i><span><strong>Bespoke Faceting:</strong> Cuts individually proportioned to honor each stone's crystal symmetry.</span></li>
+                    </ul>
+                    <div class="mt-6 pt-3">
+                        <a href="custom.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:underline">Discover Custom Craft →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 5: CERTIFIED & AUTHENTIC GEMSTONES ======== -->
+    <section class="py-20 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Trust &amp; Quality</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Certified <span class="text-[#B8860B]">&amp; Authentic</span> Gemstones</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Highlighting authenticity, quality, and certification.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="why-card">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white">GIA Certified</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Every gemstone comes with a certificate of authenticity from leading gemological institutes.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white">Ethically Sourced</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">We work directly with responsible miners and suppliers to ensure conflict-free stones.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon"><i class="fas fa-award"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white">Master Craftsmanship</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Each piece is handcrafted by artisans with decades of experience in fine jewelry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 6: CUSTOMER TESTIMONIALS ======== -->
+    <section class="py-20 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">What Our <span class="text-[#B8860B]">Customers</span> Say</h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Real reviews and customer experiences.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="testimonial-card dark:bg-[#12181F] border-[#E8D5B7] dark:border-[#2A1E14]">
+                    <div class="flex gap-1 text-[#B8860B] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-[#1E2A3A] dark:text-[#F5F0EA] text-sm leading-relaxed">"The ruby ring I purchased is absolutely stunning. The color is vivid and the craftsmanship is impeccable. I've received so many compliments!"</p>
+                    <div class="flex items-center gap-3 mt-auto pt-4">
+                        <div class="w-10 h-10 rounded-full bg-[#B8860B]/20 flex items-center justify-center text-[#B8860B] font-bold">SM</div>
+                        <div><strong class="text-[#1E2A3A] dark:text-white text-sm">Sarah M.</strong><div class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Verified Buyer</div></div>
+                    </div>
+                </div>
+                <div class="testimonial-card dark:bg-[#12181F] border-[#E8D5B7] dark:border-[#2A1E14]">
+                    <div class="flex gap-1 text-[#B8860B] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-[#1E2A3A] dark:text-[#F5F0EA] text-sm leading-relaxed">"I was nervous about buying gemstones online, but the certification and detailed photos gave me confidence. The sapphire necklace exceeded my expectations."</p>
+                    <div class="flex items-center gap-3 mt-auto pt-4">
+                        <div class="w-10 h-10 rounded-full bg-[#B8860B]/20 flex items-center justify-center text-[#B8860B] font-bold">JT</div>
+                        <div><strong class="text-[#1E2A3A] dark:text-white text-sm">James T.</strong><div class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Verified Buyer</div></div>
+                    </div>
+                </div>
+                <div class="testimonial-card dark:bg-[#12181F] border-[#E8D5B7] dark:border-[#2A1E14]">
+                    <div class="flex gap-1 text-[#B8860B] mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-[#1E2A3A] dark:text-[#F5F0EA] text-sm leading-relaxed">"The custom pendant I ordered with my birthstone is a true work of art. The team was helpful throughout the process. Highly recommend Gemora!"</p>
+                    <div class="flex items-center gap-3 mt-auto pt-4">
+                        <div class="w-10 h-10 rounded-full bg-[#B8860B]/20 flex items-center justify-center text-[#B8860B] font-bold">EP</div>
+                        <div><strong class="text-[#1E2A3A] dark:text-white text-sm">Elena P.</strong><div class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Verified Buyer</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer-bg pt-16 pb-8 border-t-4 footer-border">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="text-center md:text-start">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <div class="w-9 h-9 bg-[#B8860B] rounded-xl flex items-center justify-center"><i class="fas fa-gem text-white text-sm"></i></div>
+                        <span class="text-xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 text-sm">Premium gemstone &amp; mineral jewelry for your radiant self.</p>
+                    <div class="flex justify-center md:justify-start gap-3 mt-4">
+                        <a href="#" class="social-icon-footer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="collections.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Collections</a></li>
+                        <li><a href="products.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Products</a></li>
+                        <li><a href="custom.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Custom</a></li>
+                        <li><a href="certification.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Certification</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">About Us</a></li>
+                        <li><a href="services.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Services</a></li>
+                        <li><a href="contact.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Contact Us</a></li>
+                        <li><a href="contact.html#enquiry" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Enquire</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-map-marker-alt text-[#B8860B] mt-1"></i><span>123 Gemstone Ave, Jewel City</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-phone text-[#B8860B]"></i><span>(555) 987-6543</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-envelope text-[#B8860B]"></i><span>hello@gemora.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-[#1E2A3A]/10 dark:border-white/10 text-center text-sm footer-copyright">
+                <p>&copy; 2026 Gemora Gemstone &amp; Mineral Jewelry. <i class="fas fa-gem text-[#B8860B] mx-1"></i> Radiate with confidence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======== SCRIPTS ======== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle
+            const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+            themeBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                });
+            });
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+            // RTL
+            function setRTL(isRTL) {
+                const html = document.documentElement;
+                if (isRTL === 'rtl' || isRTL === true) { html.setAttribute('dir', 'rtl');
+                    localStorage.setItem('dir', 'rtl'); } else { html.setAttribute('dir', 'ltr');
+                    localStorage.setItem('dir', 'ltr'); }
+            }
+            const savedDir = localStorage.getItem('dir');
+            if (savedDir === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+            else document.documentElement.setAttribute('dir', 'ltr');
+
+            const rtlBtn = document.getElementById('rtl-toggle');
+            if (rtlBtn) {
+                rtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                });
+            }
+            const mobileRtlBtn = document.getElementById('mobile-rtl-toggle');
+            if (mobileRtlBtn) {
+                mobileRtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const mobileToggle = document.getElementById('mobile-toggle');
+                    if (mobileMenu && mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle && mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+
+            // Mobile menu
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    const icon = mobileToggle.querySelector('i');
+                    if (mobileMenu.classList.contains('open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                mobileMenu.querySelectorAll('a:not(#mobile-rtl-toggle)').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemora · Luxury Mineral Jewelry</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/fav.jpeg" type="image/jpeg">
+    <!-- Tailwind CSS via CDN -->
+      <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#1E2A3A',
+                            secondary: '#B8860B',
+                            accent: '#C9A96E',
+                            'accent-light': '#E8D5B7',
+                            'accent-dark': '#8B6914',
+                            blush: '#F5F0EA',
+                            rose: '#C9A96E',
+                            gold: '#B8860B',
+                            bg: '#F5F0EA',
+                            card: '#FFFFFF',
+                            dark: '#0A0E14',
+                            'dark-card': '#12181F',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+                        slideUp: { '0%': { transform: 'translateY(40px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        bounceGentle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.7' } },
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(circle at 20% 30%, rgba(201,169,110,0.08) 0%, transparent 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F0EA;
+            color: #1E2A3A;
+        }
+        .dark body {
+            background: #0A0E14;
+            color: #F5F0EA;
+        }
+        /* Scrollbar */
+        body::-webkit-scrollbar { width: 6px; }
+        body::-webkit-scrollbar-track { background: #F5F0EA; border-radius: 10px; }
+        body::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 10px; }
+        .dark body::-webkit-scrollbar-track { background: #12181F; }
+
+        /* ====== HEADER & FOOTER COLORS ====== */
+        .header-bg { background: #FFFFFF; border-color: #E8D5B7; }
+        .dark .header-bg { background: #12181F; border-color: #2A1E14; }
+        .footer-bg { background: #F5F0EA; }
+        .dark .footer-bg { background: #12181F; }
+        .footer-border { border-color: #C9A96E; }
+        .dark .footer-border { border-color: #C9A96E; }
+
+        .logo-text { color: #1E2A3A; }
+        .dark .logo-text { color: #F5F0EA; }
+        .logo-accent { color: #B8860B; }
+        .dark .logo-accent { color: #C9A96E; }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            color: #1E2A3A;
+            transition: color 0.2s;
+            font-size: 0.875rem;
+        }
+        .dark .nav-link { color: #F5F0EA; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2.5px;
+            background: #C9A96E;
+            transition: width 0.25s ease;
+            border-radius: 3px;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #B8860B !important; }
+        .dark .nav-link.active { color: #C9A96E !important; }
+
+        /* Dropdown */
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0;
+            min-width: 200px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 0.4rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            opacity: 0; visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid #E8D5B7;
+        }
+        .dark .dropdown-menu { background: #12181F; border-color: #2A1E14; }
+        .dropdown-trigger:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item {
+            display: flex; align-items: center;
+            padding: 0.5rem 1.2rem;
+            transition: all 0.2s;
+            color: #1E2A3A;
+            font-size: 0.85rem; font-weight: 500;
+        }
+        .dark .dropdown-item { color: #F5F0EA; }
+        .dropdown-item:hover { background: #F5F0EA; color: #B8860B; padding-left: 1.5rem; }
+        .dark .dropdown-item:hover { background: #1E1A14; color: #C9A96E; }
+        .dropdown-item i { margin-right: 0.75rem; width: 20px; color: #B8860B; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            background: #FFFFFF;
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 0 24px 24px;
+        }
+        .dark .mobile-menu { background: #12181F; }
+        .mobile-menu.open { max-height: 90vh; overflow-y: auto; scrollbar-width: none; }
+        .mobile-menu.open::-webkit-scrollbar { display: none; }
+
+        /* Buttons */
+        .btn-primary {
+            background: #B8860B; color: #FFFFFF;
+            font-weight: 600; border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+        .btn-primary:hover {
+            background: #8B6914;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(184, 134, 11, 0.4);
+        }
+        .btn-outline {
+            border: 2px solid #B8860B; color: #B8860B;
+            background: transparent; border-radius: 50px;
+            font-weight: 600; transition: all 0.3s;
+        }
+        .btn-outline:hover { background: #B8860B; color: #FFFFFF; transform: translateY(-2px); }
+        .dark .btn-outline { border-color: #C9A96E; color: #C9A96E; }
+        .dark .btn-outline:hover { background: #C9A96E; color: #0A0E14; }
+
+        /* Hero */
+        .hero-bg {
+            background: linear-gradient(135deg, #F5F0EA 0%, #E8D5B7 100%);
+        }
+        .dark .hero-bg {
+            background: linear-gradient(135deg, #0A0E14 0%, #12181F 100%);
+        }
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.08);
+            pointer-events: none;
+        }
+
+        /* Sections */
+        .section-badge {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dark .section-badge { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+        .section-divider { height: 3px; width: 60px; background: #C9A96E; margin: 0.5rem auto 1.5rem; border-radius: 4px; }
+
+        /* Rare Gemstone Cards */
+        .rare-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #E8D5B7;
+            transition: all 0.4s ease;
+            background: #FFFFFF;
+        }
+        .dark .rare-card { border-color: #2A1E14; background: #12181F; }
+        .rare-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(201, 169, 110, 0.35);
+            border-color: #C9A96E;
+        }
+        .rare-card .rare-img {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .rare-card:hover .rare-img { transform: scale(1.06); }
+        .rare-card .rare-body {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .rare-card .rare-tag {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            padding: 0.2rem 0.8rem;
+            border-radius: 100px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+        }
+        .dark .rare-card .rare-tag { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+
+        /* Jewelry Type Theory Cards (No Images) */
+        .type-theory-card {
+            background: #FFFFFF;
+            border: 1px solid #E8D5B7;
+            border-radius: 20px;
+            padding: 1.75rem 1.4rem;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        .dark .type-theory-card {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .type-theory-card:hover {
+            border-color: #C9A96E;
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px -12px rgba(201, 169, 110, 0.3);
+        }
+        .type-theory-card .tt-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(184, 134, 11, 0.12);
+            color: #B8860B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+        .dark .type-theory-card .tt-icon {
+            background: rgba(201, 169, 110, 0.18);
+            color: #C9A96E;
+        }
+        .type-theory-card:hover .tt-icon {
+            background: #B8860B;
+            color: #FFFFFF;
+            transform: scale(1.08);
+        }
+        .type-theory-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.2rem 0.55rem;
+            border-radius: 20px;
+            background: #F5F0EA;
+            color: #B8860B;
+            border: 1px solid #E8D5B7;
+        }
+        .dark .type-theory-badge {
+            background: #1E1A14;
+            color: #C9A96E;
+            border-color: #3A2A1A;
+        }
+        .theory-pillar-card {
+            background: #FFFFFF;
+            border: 1px solid #E8D5B7;
+            border-radius: 18px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .dark .theory-pillar-card {
+            background: #12181F;
+            border-color: #2A1E14;
+        }
+        .theory-pillar-card:hover {
+            border-color: #C9A96E;
+            transform: translateY(-3px);
+        }
+
+        /* Birthstone */
+        .birth-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.75rem;
+        }
+        @media (min-width: 640px) {
+            .birth-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .birth-grid { grid-template-columns: repeat(6, 1fr); }
+        }
+        .birth-item {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid #E8D5B7;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .dark .birth-item { background: #12181F; border-color: #2A1E14; }
+        .birth-item:hover {
+            border-color: #C9A96E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px -8px rgba(201, 169, 110, 0.3);
+        }
+        .birth-item .b-gem {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+        }
+        .birth-item .b-month {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #8B7355;
+            font-weight: 600;
+        }
+        .dark .birth-item .b-month { color: #9A8E7B; }
+        .birth-item .b-stone {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #1E2A3A;
+            margin-top: 0.1rem;
+        }
+        .dark .birth-item .b-stone { color: #F5F0EA; }
+
+        /* Why Choose Us */
+        .why-block {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid #E8D5B7;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dark .why-block { background: #12181F; border-color: #2A1E14; }
+        .why-block:hover {
+            border-color: #C9A96E;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(201, 169, 110, 0.2);
+        }
+        .why-block .w-icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        .dark .why-block .w-icon { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+        .why-block:hover .w-icon { background: #B8860B; color: #FFFFFF; }
+        .dark .why-block:hover .w-icon { background: #C9A96E; color: #0A0E14; }
+
+        /* Newsletter */
+        .newsletter-wrap {
+            background: linear-gradient(135deg, #1E2A3A 0%, #2E2418 50%, #1E2A3A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter-wrap::before {
+            content: '';
+            position: absolute;
+            top: -40%; right: -15%;
+            width: 450px; height: 450px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.06);
+            pointer-events: none;
+        }
+        .newsletter-wrap::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 350px; height: 350px;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.04);
+            pointer-events: none;
+        }
+
+        /* Footer */
+        .social-icon-footer {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(30, 42, 58, 0.1);
+            color: #1E2A3A;
+            transition: all 0.3s;
+        }
+        .dark .social-icon-footer { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; }
+        .social-icon-footer:hover { background: #B8860B; color: #FFFFFF; transform: translateY(-3px); }
+
+        .footer-text { color: rgba(30, 42, 58, 0.7); transition: color 0.2s; }
+        .dark .footer-text { color: rgba(255, 255, 255, 0.7); }
+        .footer-text:hover { color: #B8860B; }
+        .dark .footer-text:hover { color: #C9A96E; }
+        .footer-heading { color: #1E2A3A; }
+        .dark .footer-heading { color: #F5F0EA; }
+        .footer-copyright { color: rgba(30, 42, 58, 0.5); }
+        .dark .footer-copyright { color: rgba(255, 255, 255, 0.5); }
+
+        /* RTL */
+        [dir="rtl"] .ml-auto { margin-left: 0 !important; margin-right: auto !important; }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+        [dir="rtl"] .dropdown-item i { margin-right: 0; margin-left: 0.75rem; }
+        [dir="rtl"] .dropdown-item:hover { padding-left: 1.2rem; padding-right: 1.5rem; }
+
+        .toggle-spacing { gap: 0.5rem; }
+        @media (min-width: 768px) { .toggle-spacing { gap: 0.75rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 header-bg border-b shadow-sm transition-colors">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-20 md:h-22">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+                    <div class="w-10 h-10 bg-[#B8860B] rounded-xl flex items-center justify-center shadow-lg shadow-[#B8860B]/25 group-hover:scale-105 transition">
+                        <i class="fas fa-gem text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden xl:flex items-center gap-1 lg:gap-2 ml-auto rtl:ml-0 rtl:mr-auto">
+                    <div class="dropdown-trigger relative">
+                        <button class="nav-link px-3 py-2 flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-[10px] opacity-60"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="index.html"><i class="fas fa-gem"></i> Home 1</a>
+                            <a class="dropdown-item" href="home2.html"><i class="fas fa-gem"></i> Home 2 – Luxury</a>
+                        </div>
+                    </div>
+                    <a class="nav-link px-3 py-2" href="about.html">About Us</a>
+                    <a class="nav-link px-3 py-2" href="collections.html">Collections</a>
+                    <a class="nav-link px-3 py-2" href="custom.html">Custom</a>
+                    <a class="nav-link px-3 py-2" href="products.html">Products</a>
+                    <a class="nav-link px-3 py-2" href="certification.html">Certification</a>
+                    <a class="nav-link px-3 py-2" href="contact.html">Contact Us</a>
+
+                    <div class="flex items-center toggle-spacing ml-2">
+                        <button id="theme-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button id="rtl-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center text-sm font-bold">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-2 ml-3">
+                        <a href="contact.html#enquiry" class="px-5 py-2 bg-[#B8860B] text-white rounded-full text-sm font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25">Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle" class="xl:hidden w-10 h-10 rounded-full bg-[#B8860B] text-white flex items-center justify-center shadow-md shadow-[#B8860B]/25">
+                    <i class="fas fa-bars text-base"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu xl:hidden">
+                <div class="py-3 px-2 space-y-1">
+                    <div class="py-1">
+                        <button onclick="document.getElementById('home-mobile-drop').classList.toggle('hidden'); document.getElementById('home-mobile-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]">
+                            <span>Home</span>
+                            <i id="home-mobile-icon" class="fas fa-chevron-down text-xs opacity-60 transition-transform duration-300"></i>
+                        </button>
+                        <div id="home-mobile-drop" class="hidden pl-4 space-y-1 mt-1">
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="index.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 1</a>
+                            <a class="block py-2 px-4 font-medium text-[#B8860B] dark:text-[#C9A96E] bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]" href="home2.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 2 – Luxury</a>
+                        </div>
+                    </div>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="about.html">About Us</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="collections.html">Collections</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="custom.html">Custom</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="products.html">Products</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="certification.html">Certification</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="contact.html">Contact Us</a>
+
+                    <div class="flex flex-col gap-2 pt-4 mt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        <a class="text-center py-2.5 bg-[#B8860B] text-white rounded-full font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25" href="contact.html#enquiry">Enquire</a>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <button id="mobile-theme-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i> Theme</button>
+                        <button id="mobile-rtl-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-exchange-alt"></i> RTL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== SECTION 1: HERO ======== -->
+    <section class="min-h-screen flex items-center pt-24 pb-16 md:pt-28 md:pb-20 relative overflow-hidden hero-bg">
+        <div class="hero-shape w-[500px] h-[500px] -top-40 -right-40"></div>
+        <div class="hero-shape w-[400px] h-[400px] bottom-0 -left-32"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Text -->
+                <div class="animate-slide-up order-2 lg:order-1 text-center lg:text-start">
+                    <span class="section-badge"><i class="fas fa-crown text-[10px] mr-1"></i> Premium Mineral Jewelry</span>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold mt-4 mb-5 leading-[1.08] text-[#1E2A3A] dark:text-white">
+                        Exquisite <span class="text-[#B8860B]">Minerals</span><br>Set in <span class="text-[#B8860B]">Elegance</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 max-w-xl mx-auto lg:mx-0 mb-8">
+                        Discover our premium showcase of rare mineral jewelry. Each piece is a harmonious blend of nature's finest gemstones and masterful artistry.
+                    </p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                        <a href="collections.html" class="btn-primary px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base shadow-lg shadow-[#B8860B]/25 animate-bounce-gentle">
+                            <i class="fas fa-gem"></i> Shop Luxury
+                        </a>
+                        <a href="about.html" class="btn-outline px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base">Our Heritage</a>
+                    </div>
+                    <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-sm">
+                        <div class="flex items-center gap-2"><i class="fas fa-certificate text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">GIA Certified</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-hand-sparkles text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">Ethically Sourced</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-award text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">Master Crafted</span></div>
+                    </div>
+                </div>
+                <!-- Image Grid -->
+                <div class="order-1 lg:order-2 relative animate-slide-up">
+                    <div class="grid grid-cols-2 gap-3 md:gap-4">
+                        <div class="space-y-3 md:space-y-4">
+                            <div class="rounded-2xl overflow-hidden border border-[#E8D5B7] dark:border-[#2A1E14] animate-float-slow">
+                                <img src="assets/home2-hero-ring.jpg" alt="Gemstone ring" class="w-full h-44 md:h-56 object-cover hover:scale-105 transition duration-700">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden border border-[#E8D5B7] dark:border-[#2A1E14]">
+                                <img src="assets/home2-hero-necklace.jpg" alt="Gemstone necklace" class="w-full h-56 md:h-64 object-cover hover:scale-105 transition duration-700">
+                            </div>
+                        </div>
+                        <div class="space-y-3 md:space-y-4 pt-10 md:pt-14">
+                            <div class="rounded-2xl overflow-hidden border border-[#E8D5B7] dark:border-[#2A1E14]">
+                                <img src="assets/home2-hero-earrings.jpg" alt="Gemstone earrings" class="w-full h-56 md:h-64 object-cover hover:scale-105 transition duration-700">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden border border-[#E8D5B7] dark:border-[#2A1E14] animate-float-slow">
+                                <img src="assets/home2-hero-bracelet.jpg" alt="Gemstone bracelet" class="w-full h-44 md:h-56 object-cover hover:scale-105 transition duration-700">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 lg:left-auto lg:right-6 lg:translate-x-0 bg-white dark:bg-[#12181F] border border-[#C9A96E] rounded-xl px-5 py-2.5 shadow-lg flex items-center gap-2">
+                        <i class="fas fa-star text-[#B8860B] text-xs"></i>
+                        <span class="text-[10px] uppercase tracking-[0.15em] text-[#B8860B] dark:text-[#C9A96E] font-bold">New Arrival</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 2: DISCOVER RARE GEMSTONES ======== -->
+    <section class="py-20 md:py-24 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Exclusive Finds</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Discover <span class="text-[#B8860B]">Rare Gemstones</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Unique and rare gemstone highlights from the world's most coveted sources.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Rare 1 -->
+                <div class="rare-card">
+                    <div class="rare-img" style="background-image: url('assets/rare-paraiba-tourmaline.jpg');"></div>
+                    <div class="rare-body">
+                        <span class="rare-tag">Rare Find</span>
+                        <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white">Paraiba Tourmaline</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1.5">Neon blue-green, found only in Brazil</p>
+                        <a href="products.html" class="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all">Explore <i class="fas fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+                <!-- Rare 2 -->
+                <div class="rare-card">
+                    <div class="rare-img" style="background-image: url('assets/rare-alexandrite.jpg');"></div>
+                    <div class="rare-body">
+                        <span class="rare-tag">Limited</span>
+                        <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white">Alexandrite</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1.5">Color-changing gemstone, a true miracle</p>
+                        <a href="products.html" class="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all">Explore <i class="fas fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+                <!-- Rare 3 -->
+                <div class="rare-card">
+                    <div class="rare-img" style="background-image: url('assets/rare-padparadscha.jpg');"></div>
+                    <div class="rare-body">
+                        <span class="rare-tag">Exclusive</span>
+                        <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white">Padparadscha Sapphire</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1.5">Lotus-colored, the rarest sapphire</p>
+                        <a href="products.html" class="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all">Explore <i class="fas fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 3: SHOP BY JEWELRY TYPE (THEORY & CLASSIFICATION) ======== -->
+    <section class="py-20 md:py-24 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Categories &amp; Setting Theory</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Shop by <span class="text-[#B8860B]">Jewelry Type</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">Explore structural anatomy, setting mechanics, and gemological suitability across our signature jewelry categories.</p>
+            </div>
+
+            <!-- 5 Theoretical Category Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 max-w-7xl mx-auto mb-12">
+                <!-- Rings Theory -->
+                <div class="type-theory-card group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="tt-icon"><i class="fas fa-ring"></i></div>
+                            <span class="type-theory-badge">24 Designs</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">Rings</h3>
+                        <p class="text-xs text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                            Engineered around focal solitaires, halos, and bands. Cathedral &amp; prong settings maximize light transmission into the gem's pavilion while safeguarding facet corners.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-3">
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Settings:</strong> Prong, Bezel, Pavé</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Ideal Gems:</strong> Ruby, Sapphire, Diamond</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Hardness:</strong> Mohs 7.5 – 10 (Daily)</div>
+                        </div>
+                    </div>
+                    <a href="products.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all mt-4 pt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        Explore Rings <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Necklaces Theory -->
+                <div class="type-theory-card group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="tt-icon"><i class="fas fa-gem"></i></div>
+                            <span class="type-theory-badge">18 Designs</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">Necklaces</h3>
+                        <p class="text-xs text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                            Collar and princess lengths featuring graduated or uniform mineral mountings. Balanced weight distribution maintains central alignment with fluid ergonomic drape.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-3">
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Settings:</strong> Channel, Bezel-Link</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Ideal Gems:</strong> Emerald, Sapphire, Opal</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Lengths:</strong> 16″ (Choker) to 24″</div>
+                        </div>
+                    </div>
+                    <a href="products.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all mt-4 pt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        Explore Necklaces <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Pendants Theory -->
+                <div class="type-theory-card group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="tt-icon"><i class="fas fa-certificate"></i></div>
+                            <span class="type-theory-badge">12 Designs</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">Pendants</h3>
+                        <p class="text-xs text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                            Articulated suspension bails allow natural stone movement with ambient light reflection. Spotlights raw crystal minerals, geodes, and high-carat statement centerpieces.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-3">
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Settings:</strong> Tension, Wire-Wrap, Halo</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Ideal Gems:</strong> Quartz, Tourmaline, Topaz</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Focus:</strong> Focal center gemstone</div>
+                        </div>
+                    </div>
+                    <a href="products.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all mt-4 pt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        Explore Pendants <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Earrings Theory -->
+                <div class="type-theory-card group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="tt-icon"><i class="fas fa-star"></i></div>
+                            <span class="type-theory-badge">20 Designs</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">Earrings</h3>
+                        <p class="text-xs text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                            Precision matched pairs calibrated in tone, saturation, and refractive brilliance. Open backings let maximum daylight pass through for illuminated facial framing.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-3">
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Styles:</strong> Studs, Drops, Chandeliers</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Ideal Gems:</strong> Aquamarine, Garnet, Citrine</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Clasps:</strong> Friction, Leverback, Omega</div>
+                        </div>
+                    </div>
+                    <a href="products.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all mt-4 pt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        Explore Earrings <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Bracelets Theory -->
+                <div class="type-theory-card group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="tt-icon"><i class="fas fa-link"></i></div>
+                            <span class="type-theory-badge">16 Designs</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-2">Bracelets</h3>
+                        <p class="text-xs text-[#1E2A3A]/75 dark:text-[#F5F0EA]/75 leading-relaxed mb-4">
+                            Continuous articulated bezels and flexible prong linkages engineered to absorb mechanical tension. Double-safety box clasps guarantee security during movement.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 border-t border-[#E8D5B7] dark:border-[#2A1E14] pt-3">
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Styles:</strong> Tennis, Bangle, Cuff</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Ideal Gems:</strong> Amethyst, Spinel, Zircon</div>
+                            <div><strong class="text-[#B8860B] dark:text-[#C9A96E]">Security:</strong> Dual latch safety clasp</div>
+                        </div>
+                    </div>
+                    <a href="products.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B8860B] dark:text-[#C9A96E] hover:gap-2.5 transition-all mt-4 pt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        Explore Bracelets <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Theory Pillars & Craftsmanship Principles -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto pt-6 border-t border-[#E8D5B7]/60 dark:border-[#2A1E14]">
+                <div class="theory-pillar-card flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-xl bg-[#B8860B]/10 flex items-center justify-center text-[#B8860B] shrink-0 font-bold text-sm">01</div>
+                    <div>
+                        <h4 class="font-display font-bold text-[#1E2A3A] dark:text-white text-base mb-1">Setting Engineering</h4>
+                        <p class="text-xs text-[#1E2A3A]/65 dark:text-[#F5F0EA]/65 leading-relaxed">Micro-prong, tension, and bezel mounts engineered to balance stone security with uninhibited light dispersion.</p>
+                    </div>
+                </div>
+                <div class="theory-pillar-card flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-xl bg-[#B8860B]/10 flex items-center justify-center text-[#B8860B] shrink-0 font-bold text-sm">02</div>
+                    <div>
+                        <h4 class="font-display font-bold text-[#1E2A3A] dark:text-white text-base mb-1">Precious Metallurgy</h4>
+                        <p class="text-xs text-[#1E2A3A]/65 dark:text-[#F5F0EA]/65 leading-relaxed">Solid 18k gold (750 purity), 950 platinum, and 925 sterling silver alloyed for hypoallergenic comfort and lifetime resilience.</p>
+                    </div>
+                </div>
+                <div class="theory-pillar-card flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-xl bg-[#B8860B]/10 flex items-center justify-center text-[#B8860B] shrink-0 font-bold text-sm">03</div>
+                    <div>
+                        <h4 class="font-display font-bold text-[#1E2A3A] dark:text-white text-base mb-1">Gemological Anatomy</h4>
+                        <p class="text-xs text-[#1E2A3A]/65 dark:text-[#F5F0EA]/65 leading-relaxed">Every stone's table facet, girdle thickness, and pavilion angle are analyzed by GIA certified gemologists before mounting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 4: BIRTHSTONE COLLECTION ======== -->
+    <section class="py-20 md:py-24 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Personalized</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Birthstone <span class="text-[#B8860B]">Collection</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Gemstones categorized by birth month — find the stone that tells your story.</p>
+            </div>
+            <div class="birth-grid max-w-5xl mx-auto">
+                <div class="birth-item">
+                    <div class="b-gem bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">January</span>
+                    <span class="b-stone">Garnet</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">February</span>
+                    <span class="b-stone">Amethyst</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">March</span>
+                    <span class="b-stone">Aquamarine</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">April</span>
+                    <span class="b-stone">Diamond</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">May</span>
+                    <span class="b-stone">Emerald</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">June</span>
+                    <span class="b-stone">Pearl</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">July</span>
+                    <span class="b-stone">Ruby</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">August</span>
+                    <span class="b-stone">Peridot</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">September</span>
+                    <span class="b-stone">Sapphire</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">October</span>
+                    <span class="b-stone">Opal</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">November</span>
+                    <span class="b-stone">Topaz</span>
+                </div>
+                <div class="birth-item">
+                    <div class="b-gem bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"><i class="fas fa-gem"></i></div>
+                    <span class="b-month">December</span>
+                    <span class="b-stone">Turquoise</span>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="collections.html" class="btn-outline px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base">View All Birthstones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 5: WHY CHOOSE US ======== -->
+    <section class="py-20 md:py-24 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Our Promise</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Why <span class="text-[#B8860B]">Choose Us</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Authenticity, quality, craftsmanship, and ethical sourcing.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="why-block">
+                    <div class="w-icon"><i class="fas fa-certificate"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Certified Authentic</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Every gemstone is GIA certified and comes with a certificate of authenticity.</p>
+                </div>
+                <div class="why-block">
+                    <div class="w-icon"><i class="fas fa-gem"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Premium Quality</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Hand-selected stones of the highest grade, flawless and vibrant.</p>
+                </div>
+                <div class="why-block">
+                    <div class="w-icon"><i class="fas fa-hammer"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Master Craftsmanship</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Each piece is handcrafted by artisans with decades of experience.</p>
+                </div>
+                <div class="why-block">
+                    <div class="w-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h4 class="font-bold text-[#1E2A3A] dark:text-white mb-2">Ethical Sourcing</h4>
+                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Conflict-free gemstones sourced from responsible mines worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 6: NEWSLETTER & EXCLUSIVE OFFERS ======== -->
+    <section class="newsletter-wrap py-20 md:py-24 relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="section-badge" style="background: rgba(201,169,110,0.2); color: #E8D5B7;">Stay Connected</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4 text-white leading-tight">
+                    Newsletter &amp; <span class="text-[#C9A96E]">Exclusive Offers</span>
+                </h2>
+                <div class="h-[3px] w-16 bg-[#C9A96E] mx-auto my-5 rounded-full"></div>
+                <p class="text-base text-white/60 mb-8 max-w-lg mx-auto">
+                    Subscribe to receive early access to new collections, exclusive offers, and gemstone stories curated just for you.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Your email address" required
+                        class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white text-sm placeholder-white/40 focus:outline-none focus:border-[#C9A96E] transition">
+                    <button type="submit" class="px-8 py-3.5 bg-[#B8860B] text-white rounded-full text-sm font-semibold hover:bg-[#C9A96E] hover:text-[#0A0E14] transition whitespace-nowrap shadow-lg shadow-[#B8860B]/25">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="text-xs text-white/30 mt-4">We respect your privacy. Unsubscribe anytime.</p>
+
+                <div class="grid grid-cols-3 gap-4 mt-12 pt-10 border-t border-white/10">
+                    <div class="text-center">
+                        <i class="fas fa-truck text-[#C9A96E] text-xl mb-2"></i>
+                        <p class="text-xs text-white/50">Free Shipping</p>
+                        <p class="text-[10px] text-white/30 mt-0.5">On orders $500+</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-undo text-[#C9A96E] text-xl mb-2"></i>
+                        <p class="text-xs text-white/50">30-Day Returns</p>
+                        <p class="text-[10px] text-white/30 mt-0.5">Hassle-free</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-lock text-[#C9A96E] text-xl mb-2"></i>
+                        <p class="text-xs text-white/50">Secure Checkout</p>
+                        <p class="text-[10px] text-white/30 mt-0.5">SSL encrypted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer-bg pt-16 pb-8 border-t-4 footer-border">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="text-center md:text-start">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <div class="w-9 h-9 bg-[#B8860B] rounded-xl flex items-center justify-center"><i class="fas fa-gem text-white text-sm"></i></div>
+                        <span class="text-xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 text-sm">Premium gemstone &amp; mineral jewelry for your radiant self.</p>
+                    <div class="flex justify-center md:justify-start gap-3 mt-4">
+                        <a href="#" class="social-icon-footer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="collections.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Collections</a></li>
+                        <li><a href="products.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Products</a></li>
+                        <li><a href="custom.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Custom</a></li>
+                        <li><a href="certification.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Certification</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">About Us</a></li>
+                        <li><a href="services.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Services</a></li>
+                        <li><a href="contact.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Contact Us</a></li>
+                        <li><a href="contact.html#enquiry" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Enquire</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-map-marker-alt text-[#B8860B] mt-1"></i><span>123 Gemstone Ave, Jewel City</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-phone text-[#B8860B]"></i><span>(555) 987-6543</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-envelope text-[#B8860B]"></i><span>hello@gemora.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-[#1E2A3A]/10 dark:border-white/10 text-center text-sm footer-copyright">
+                <p>&copy; 2026 Gemora Gemstone &amp; Mineral Jewelry. <i class="fas fa-gem text-[#B8860B] mx-1"></i> Radiate with confidence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======== SCRIPTS ======== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle
+            const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+            themeBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                });
+            });
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+            // RTL
+            function setRTL(isRTL) {
+                const html = document.documentElement;
+                if (isRTL === 'rtl' || isRTL === true) {
+                    html.setAttribute('dir', 'rtl');
+                    localStorage.setItem('dir', 'rtl');
+                } else {
+                    html.setAttribute('dir', 'ltr');
+                    localStorage.setItem('dir', 'ltr');
+                }
+            }
+            const savedDir = localStorage.getItem('dir');
+            if (savedDir === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+            else document.documentElement.setAttribute('dir', 'ltr');
+
+            const rtlBtn = document.getElementById('rtl-toggle');
+            if (rtlBtn) {
+                rtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                });
+            }
+            const mobileRtlBtn = document.getElementById('mobile-rtl-toggle');
+            if (mobileRtlBtn) {
+                mobileRtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const mobileToggle = document.getElementById('mobile-toggle');
+                    if (mobileMenu && mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle && mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+
+            // Mobile menu
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    const icon = mobileToggle.querySelector('i');
+                    if (mobileMenu.classList.contains('open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                mobileMenu.querySelectorAll('a:not(#mobile-rtl-toggle):not(#mobile-theme-toggle)').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

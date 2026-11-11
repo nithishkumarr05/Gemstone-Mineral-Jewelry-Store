@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certification · Gemora Gemstone & Mineral Jewelry</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/fav.jpeg" type="image/jpeg">
+    <!-- Tailwind CSS via CDN -->
+      <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#1E2A3A',
+                            secondary: '#B8860B',
+                            accent: '#C9A96E',
+                            'accent-light': '#E8D5B7',
+                            'accent-dark': '#8B6914',
+                            blush: '#F5F0EA',
+                            rose: '#C9A96E',
+                            gold: '#B8860B',
+                            bg: '#F5F0EA',
+                            card: '#FFFFFF',
+                            dark: '#0A0E14',
+                            'dark-card': '#12181F',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+                        slideUp: { '0%': { transform: 'translateY(40px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        bounceGentle: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+                        pulseSoft: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.7' } },
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(circle at 20% 30%, rgba(201,169,110,0.08) 0%, transparent 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F0EA;
+            color: #1E2A3A;
+        }
+        .dark body {
+            background: #0A0E14;
+            color: #F5F0EA;
+        }
+        /* Scrollbar */
+        body::-webkit-scrollbar { width: 6px; }
+        body::-webkit-scrollbar-track { background: #F5F0EA; border-radius: 10px; }
+        body::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 10px; }
+        .dark body::-webkit-scrollbar-track { background: #12181F; }
+
+        /* ====== HEADER & FOOTER COLORS ====== */
+        .header-bg { background: #FFFFFF; border-color: #E8D5B7; }
+        .dark .header-bg { background: #12181F; border-color: #2A1E14; }
+        .footer-bg { background: #F5F0EA; }
+        .dark .footer-bg { background: #12181F; }
+        .footer-border { border-color: #C9A96E; }
+        .dark .footer-border { border-color: #C9A96E; }
+
+        .logo-text { color: #1E2A3A; }
+        .dark .logo-text { color: #F5F0EA; }
+        .logo-accent { color: #B8860B; }
+        .dark .logo-accent { color: #C9A96E; }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            color: #1E2A3A;
+            transition: color 0.2s;
+            font-size: 0.875rem;
+        }
+        .dark .nav-link { color: #F5F0EA; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2.5px;
+            background: #C9A96E;
+            transition: width 0.25s ease;
+            border-radius: 3px;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #B8860B !important; }
+        .dark .nav-link.active { color: #C9A96E !important; }
+
+        /* Dropdown */
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0;
+            min-width: 200px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 0.4rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            opacity: 0; visibility: hidden;
+            transform: translateY(12px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            border: 1px solid #E8D5B7;
+        }
+        .dark .dropdown-menu { background: #12181F; border-color: #2A1E14; }
+        .dropdown-trigger:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-item {
+            display: flex; align-items: center;
+            padding: 0.5rem 1.2rem;
+            transition: all 0.2s;
+            color: #1E2A3A;
+            font-size: 0.85rem; font-weight: 500;
+        }
+        .dark .dropdown-item { color: #F5F0EA; }
+        .dropdown-item:hover { background: #F5F0EA; color: #B8860B; padding-left: 1.5rem; }
+        .dark .dropdown-item:hover { background: #1E1A14; color: #C9A96E; }
+        .dropdown-item i { margin-right: 0.75rem; width: 20px; color: #B8860B; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            background: #FFFFFF;
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 0 24px 24px;
+        }
+        .dark .mobile-menu { background: #12181F; }
+        .mobile-menu.open { max-height: 90vh; overflow-y: auto; scrollbar-width: none; }
+        .mobile-menu.open::-webkit-scrollbar { display: none; }
+
+        /* Buttons */
+        .btn-primary {
+            background: #B8860B; color: #FFFFFF;
+            font-weight: 600; border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+        }
+        .btn-primary:hover {
+            background: #8B6914;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(184, 134, 11, 0.4);
+        }
+        .btn-outline {
+            border: 2px solid #B8860B; color: #B8860B;
+            background: transparent; border-radius: 50px;
+            font-weight: 600; transition: all 0.3s;
+        }
+        .btn-outline:hover { background: #B8860B; color: #FFFFFF; transform: translateY(-2px); }
+        .dark .btn-outline { border-color: #C9A96E; color: #C9A96E; }
+        .dark .btn-outline:hover { background: #C9A96E; color: #0A0E14; }
+
+        /* Hero */
+        .hero-bg {
+            background: linear-gradient(135deg, #F5F0EA 0%, #E8D5B7 100%);
+        }
+        .dark .hero-bg {
+            background: linear-gradient(135deg, #0A0E14 0%, #12181F 100%);
+        }
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 169, 110, 0.08);
+            pointer-events: none;
+        }
+
+        /* Sections */
+        .section-badge {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.15);
+            color: #B8860B;
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dark .section-badge { background: rgba(201, 169, 110, 0.25); color: #C9A96E; }
+        .section-divider { height: 3px; width: 60px; background: #C9A96E; margin: 0.5rem auto 1.5rem; border-radius: 4px; }
+
+        /* ===== CERTIFICATE DOCUMENT LOOK ===== */
+        .cert-doc {
+            background: #FFFFFF;
+            border: 1px solid #E8D5B7;
+            border-radius: 4px;
+            position: relative;
+            box-shadow: 0 24px 60px -20px rgba(30, 42, 58, 0.18);
+        }
+        .dark .cert-doc { background: #12181F; border-color: #2A1E14; box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5); }
+        .cert-doc::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(201, 169, 110, 0.45);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .cert-doc::after {
+            content: '';
+            position: absolute;
+            inset: 16px;
+            border: 1px dashed rgba(201, 169, 110, 0.3);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .cert-seal {
+            width: 88px; height: 88px;
+            border-radius: 50%;
+            border: 2px solid #C9A96E;
+            display: flex; align-items: center; justify-content: center;
+            background: radial-gradient(circle at 30% 25%, rgba(201,169,110,0.18), rgba(201,169,110,0.05));
+            color: #B8860B;
+            font-size: 1.6rem;
+            position: relative;
+        }
+        .dark .cert-seal { color: #C9A96E; }
+
+        /* ===== WHY CERTIFICATION (trust pillars) ===== */
+        .trust-pillar {
+            background: transparent;
+            border-left: 2px solid #E8D5B7;
+            padding: 0.25rem 0 0.25rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .dark .trust-pillar { border-color: #2A1E14; }
+        .trust-pillar:hover { border-color: #B8860B; padding-left: 1.9rem; }
+        [dir="rtl"] .trust-pillar { border-left: none; border-right: 2px solid #E8D5B7; padding: 0.25rem 1.5rem 0.25rem 0; }
+        [dir="rtl"] .trust-pillar:hover { border-color: #B8860B; padding-right: 1.9rem; padding-left: 0; }
+        .trust-pillar .tp-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: #B8860B;
+            text-transform: uppercase;
+        }
+        .dark .trust-pillar .tp-num { color: #C9A96E; }
+
+        /* ===== PROCESS TIMELINE ===== */
+        .process-line {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        [dir="rtl"] .process-line { padding-left: 0; padding-right: 2.5rem; }
+        .process-line::before {
+            content: '';
+            position: absolute;
+            top: 8px; bottom: 8px; left: 11px;
+            width: 2px;
+            background: linear-gradient(to bottom, #C9A96E 0%, rgba(201,169,110,0.15) 100%);
+        }
+        [dir="rtl"] .process-line::before { left: auto; right: 11px; }
+        .process-node {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+        .process-node:last-child { padding-bottom: 0; }
+        .process-node .node-dot {
+            position: absolute;
+            left: -2.5rem; top: 4px;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 2px solid #B8860B;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.55rem;
+            font-weight: 800;
+            color: #B8860B;
+            z-index: 2;
+        }
+        [dir="rtl"] .process-node .node-dot { left: auto; right: -2.5rem; }
+        .dark .process-node .node-dot { background: #12181F; border-color: #C9A96E; color: #C9A96E; }
+
+        /* ===== QUALITY STANDARDS BARS ===== */
+        .quality-card {
+            background: #FFFFFF;
+            border: 1px solid #E8D5B7;
+            border-radius: 18px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .dark .quality-card { background: #12181F; border-color: #2A1E14; }
+        .quality-card:hover {
+            border-color: #C9A96E;
+            box-shadow: 0 16px 36px -18px rgba(201, 169, 110, 0.3);
+            transform: translateY(-3px);
+        }
+        .quality-card .q-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1;
+            color: rgba(201, 169, 110, 0.35);
+        }
+        .dark .quality-card .q-letter { color: rgba(201, 169, 110, 0.25); }
+        .q-bar-track {
+            height: 6px;
+            border-radius: 100px;
+            background: rgba(201, 169, 110, 0.15);
+            overflow: hidden;
+        }
+        .dark .q-bar-track { background: rgba(201, 169, 110, 0.12); }
+        .q-bar-fill {
+            height: 100%;
+            border-radius: 100px;
+            background: linear-gradient(90deg, #B8860B, #E8D5B7);
+            transition: width 1s ease;
+        }
+
+        /* ===== VERIFICATION CARD ===== */
+        .verify-card {
+            background: #FFFFFF;
+            border: 1px solid #E8D5B7;
+            border-radius: 24px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .dark .verify-card { background: #12181F; border-color: #2A1E14; }
+        .verify-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #B8860B, #E8D5B7, #B8860B);
+        }
+        .form-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #1E2A3A;
+            margin-bottom: 0.45rem;
+        }
+        .dark .form-label { color: #F5F0EA; }
+        .form-input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: #F5F0EA;
+            border: 1px solid #E8D5B7;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #1E2A3A;
+            transition: all 0.25s;
+        }
+        .dark .form-input { background: #1E1A14; border-color: #2A1E14; color: #F5F0EA; }
+        .form-input:focus {
+            outline: none;
+            border-color: #B8860B;
+            box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.2);
+        }
+
+        /* ===== FAQ ACCORDION ===== */
+        .faq-item {
+            background: #FFFFFF;
+            border: 1px solid #E8D5B7;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .dark .faq-item { background: #12181F; border-color: #2A1E14; }
+        .faq-item.open { border-color: #C9A96E; box-shadow: 0 12px 28px -16px rgba(201, 169, 110, 0.3); }
+        .faq-q {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.15rem 1.4rem;
+            text-align: left;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1E2A3A;
+            transition: color 0.2s;
+        }
+        .dark .faq-q { color: #F5F0EA; }
+        .faq-q:hover { color: #B8860B; }
+        .dark .faq-q:hover { color: #C9A96E; }
+        .faq-q .faq-chev {
+            font-size: 0.7rem;
+            color: #B8860B;
+            transition: transform 0.35s ease;
+            flex-shrink: 0;
+        }
+        .dark .faq-q .faq-chev { color: #C9A96E; }
+        .faq-item.open .faq-chev { transform: rotate(180deg); }
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .faq-a-inner {
+            padding: 0 1.4rem 1.25rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #8B7355;
+            border-top: 1px solid rgba(201, 169, 110, 0.2);
+            padding-top: 1rem;
+            margin: 0 1.4rem 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .dark .faq-a-inner { color: #9A8E7B; border-color: rgba(201, 169, 110, 0.15); }
+
+        /* Footer */
+        .social-icon-footer {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(30, 42, 58, 0.1);
+            color: #1E2A3A;
+            transition: all 0.3s;
+        }
+        .dark .social-icon-footer { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; }
+        .social-icon-footer:hover { background: #B8860B; color: #FFFFFF; transform: translateY(-3px); }
+
+        .footer-text { color: rgba(30, 42, 58, 0.7); transition: color 0.2s; }
+        .dark .footer-text { color: rgba(255, 255, 255, 0.7); }
+        .footer-text:hover { color: #B8860B; }
+        .dark .footer-text:hover { color: #C9A96E; }
+        .footer-heading { color: #1E2A3A; }
+        .dark .footer-heading { color: #F5F0EA; }
+        .footer-copyright { color: rgba(30, 42, 58, 0.5); }
+        .dark .footer-copyright { color: rgba(255, 255, 255, 0.5); }
+
+        /* RTL */
+        [dir="rtl"] .ml-auto { margin-left: 0 !important; margin-right: auto !important; }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+        [dir="rtl"] .dropdown-item i { margin-right: 0; margin-left: 0.75rem; }
+        [dir="rtl"] .dropdown-item:hover { padding-left: 1.2rem; padding-right: 1.5rem; }
+
+        .toggle-spacing { gap: 0.5rem; }
+        @media (min-width: 768px) { .toggle-spacing { gap: 0.75rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- ======== NAVIGATION ======== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 header-bg border-b shadow-sm transition-colors">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between h-20 md:h-22">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+                    <div class="w-10 h-10 bg-[#B8860B] rounded-xl flex items-center justify-center shadow-lg shadow-[#B8860B]/25 group-hover:scale-105 transition">
+                        <i class="fas fa-gem text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden xl:flex items-center gap-1 lg:gap-2 ml-auto rtl:ml-0 rtl:mr-auto">
+                    <div class="dropdown-trigger relative">
+                        <button class="nav-link px-3 py-2 flex items-center gap-1">
+                            Home <i class="fas fa-chevron-down text-[10px] opacity-60"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="index.html"><i class="fas fa-gem"></i> Home 1</a>
+                            <a class="dropdown-item" href="home2.html"><i class="fas fa-gem"></i> Home 2</a>
+                        </div>
+                    </div>
+                    <a class="nav-link px-3 py-2" href="about.html">About Us</a>
+                    <a class="nav-link px-3 py-2" href="collections.html">Collections</a>
+                    <a class="nav-link px-3 py-2" href="custom.html">Custom</a>
+                    <a class="nav-link px-3 py-2" href="products.html">Products</a>
+                    <a class="nav-link active px-3 py-2" href="certification.html">Certification</a>
+                    <a class="nav-link px-3 py-2" href="contact.html">Contact Us</a>
+
+                    <div class="flex items-center toggle-spacing ml-2">
+                        <button id="theme-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button id="rtl-toggle" class="w-9 h-9 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] hover:scale-110 transition flex items-center justify-center text-sm font-bold">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-2 ml-3">
+                        <a href="contact.html#enquiry" class="px-5 py-2 bg-[#B8860B] text-white rounded-full text-sm font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25">Enquire</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobile-toggle" class="xl:hidden w-10 h-10 rounded-full bg-[#B8860B] text-white flex items-center justify-center shadow-md shadow-[#B8860B]/25">
+                    <i class="fas fa-bars text-base"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu xl:hidden">
+                <div class="py-3 px-2 space-y-1">
+                    <div class="py-1">
+                        <button onclick="document.getElementById('home-mobile-drop').classList.toggle('hidden'); document.getElementById('home-mobile-icon').classList.toggle('rotate-180')" class="w-full flex items-center justify-between py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]">
+                            <span>Home</span>
+                            <i id="home-mobile-icon" class="fas fa-chevron-down text-xs opacity-60 transition-transform duration-300"></i>
+                        </button>
+                        <div id="home-mobile-drop" class="hidden pl-4 space-y-1 mt-1">
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="index.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 1</a>
+                            <a class="block py-2 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="home2.html"><i class="fas fa-gem w-6 text-[#B8860B]"></i> Home 2</a>
+                        </div>
+                    </div>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="about.html">About Us</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="collections.html">Collections</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="custom.html">Custom</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="products.html">Products</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#B8860B] dark:text-[#C9A96E] bg-[#F5F0EA] dark:bg-[#12181F] rounded-xl border-l-4 border-[#C9A96E]" href="certification.html">Certification</a>
+                    <a class="block py-2.5 px-4 font-medium text-[#1E2A3A] dark:text-white hover:bg-[#F5F0EA] dark:hover:bg-[#12181F] rounded-xl transition" href="contact.html">Contact Us</a>
+
+                    <div class="flex flex-col gap-2 pt-4 mt-3 border-t border-[#E8D5B7] dark:border-[#2A1E14]">
+                        <a class="text-center py-2.5 bg-[#B8860B] text-white rounded-full font-semibold hover:bg-[#8B6914] transition shadow-md shadow-[#B8860B]/25" href="contact.html#enquiry">Enquire</a>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <button id="mobile-theme-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i> Theme</button>
+                        <button id="mobile-rtl-toggle" class="flex-1 py-2 rounded-full bg-[#E8D5B7] dark:bg-[#2A1E14] text-[#1E2A3A] dark:text-[#C9A96E] text-sm font-medium flex items-center gap-2 justify-center"><i class="fas fa-exchange-alt"></i> RTL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== SECTION 1: HERO ======== -->
+    <section class="min-h-[85vh] flex items-center pt-24 pb-16 md:pt-28 md:pb-20 relative overflow-hidden hero-bg">
+        <div class="hero-shape w-[520px] h-[520px] -top-44 -right-40"></div>
+        <div class="hero-shape w-[380px] h-[380px] -bottom-24 -left-28"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Copy -->
+                <div class="animate-slide-up order-2 lg:order-1">
+                    <span class="section-badge"><i class="fas fa-shield-alt text-[10px] mr-1"></i> Verified Authenticity</span>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold mt-4 mb-5 leading-[1.08] text-[#1E2A3A] dark:text-white">
+                        Authenticity &amp; <span class="text-[#B8860B]">Trust</span><br>in Every <span class="text-[#B8860B]">Gemstone</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 max-w-xl mb-8">
+                        Every Gemora gemstone is independently examined, graded, and certified. We believe you deserve absolute certainty in every purchase — from origin to setting.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#verify" class="btn-primary px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base shadow-lg shadow-[#B8860B]/25 animate-bounce-gentle">
+                            <i class="fas fa-search"></i> Verify a Certificate
+                        </a>
+                        <a href="#process" class="btn-outline px-8 py-3.5 rounded-full inline-flex items-center gap-2 text-base">Our Process</a>
+                    </div>
+                    <div class="mt-10 flex flex-wrap gap-6 text-sm">
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">GIA &amp; AGS Partners</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">Independent Labs</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#B8860B]"></i> <span class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70">100% Conflict-Free</span></div>
+                    </div>
+                </div>
+                <!-- Certificate Document Visual -->
+                <div class="order-1 lg:order-2 animate-slide-up">
+                    <div class="cert-doc p-8 md:p-10 text-center">
+                        <p class="text-[0.6rem] uppercase tracking-[0.3em] text-[#B8860B] dark:text-[#C9A96E] font-bold mb-3">Certificate of Authenticity</p>
+                        <div class="cert-seal mx-auto mb-5">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold text-[#1E2A3A] dark:text-white">Gemora Certified</h3>
+                        <p class="text-xs text-[#8B7355] dark:text-[#9A8E7B] mt-2 max-w-[220px] mx-auto leading-relaxed">This document certifies that the described gemstone has been examined and graded by an independent gemological laboratory.</p>
+                        <div class="mt-6 pt-5 border-t border-[#E8D5B7] dark:border-[#2A1E14] grid grid-cols-2 gap-4 text-left">
+                            <div>
+                                <p class="text-[0.55rem] uppercase tracking-widest text-[#8B7355] dark:text-[#9A8E7B]">Report No.</p>
+                                <p class="text-sm font-bold text-[#1E2A3A] dark:text-white">GR-2026-0148</p>
+                            </div>
+                            <div>
+                                <p class="text-[0.55rem] uppercase tracking-widest text-[#8B7355] dark:text-[#9A8E7B]">Issued</p>
+                                <p class="text-sm font-bold text-[#1E2A3A] dark:text-white">Jan 2026</p>
+                            </div>
+                            <div>
+                                <p class="text-[0.55rem] uppercase tracking-widest text-[#8B7355] dark:text-[#9A8E7B]">Species</p>
+                                <p class="text-sm font-bold text-[#1E2A3A] dark:text-white">Natural Corundum</p>
+                            </div>
+                            <div>
+                                <p class="text-[0.55rem] uppercase tracking-widest text-[#8B7355] dark:text-[#9A8E7B]">Variety</p>
+                                <p class="text-sm font-bold text-[#B8860B] dark:text-[#C9A96E]">Ruby</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 2: WHY CERTIFICATION MATTERS ======== -->
+    <section class="py-20 md:py-24 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-5 gap-12 items-start">
+                    <!-- Heading -->
+                    <div class="lg:col-span-2 lg:sticky lg:top-28">
+                        <span class="section-badge">The Importance</span>
+                        <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 mb-5 text-[#1E2A3A] dark:text-white">
+                            Why Certification <span class="text-[#B8860B]">Matters</span>
+                        </h2>
+                        <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">
+                            A certificate is more than a document — it is independent proof of what you are buying. It protects your investment, confirms the stone's identity, and discloses any treatments.
+                        </p>
+                    </div>
+                    <!-- Pillars -->
+                    <div class="lg:col-span-3 space-y-8">
+                        <div class="trust-pillar">
+                            <p class="tp-num">01 — Identity</p>
+                            <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mt-1 mb-1.5">Confirms the True Gemstone</h4>
+                            <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">A laboratory report verifies the species and variety of the stone, ruling out synthetics, imitations, and misrepresentation.</p>
+                        </div>
+                        <div class="trust-pillar">
+                            <p class="tp-num">02 — Investment</p>
+                            <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mt-1 mb-1.5">Protects Your Purchase</h4>
+                            <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">A certified stone carries documented value. Certificates support insurance claims, resale, and appraisal with objective data.</p>
+                        </div>
+                        <div class="trust-pillar">
+                            <p class="tp-num">03 — Transparency</p>
+                            <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mt-1 mb-1.5">Discloses Treatments</h4>
+                            <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">Heating, oiling, and fracture-filling are disclosed in writing — so you know exactly what you are paying for.</p>
+                        </div>
+                        <div class="trust-pillar">
+                            <p class="tp-num">04 — Confidence</p>
+                            <h4 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mt-1 mb-1.5">Peace of Mind</h4>
+                            <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed">Buying a certified gemstone means buying with certainty — no guesswork, no surprises, no regrets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 3: OUR CERTIFICATION PROCESS ======== -->
+    <section id="process" class="py-20 md:py-24 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Step by Step</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Our Certification <span class="text-[#B8860B]">Process</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Every stone passes through a rigorous, documented inspection and quality assessment.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="process-line">
+                    <div class="process-node">
+                        <span class="node-dot">1</span>
+                        <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white">Intake &amp; Documentation</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1 leading-relaxed">Each stone is logged with its origin paperwork, supplier details, and a unique internal reference before entering the lab.</p>
+                    </div>
+                    <div class="process-node">
+                        <span class="node-dot">2</span>
+                        <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white">Physical Examination</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1 leading-relaxed">Gemologists inspect the stone under magnification and specialized lighting for inclusions, fractures, and surface characteristics.</p>
+                    </div>
+                    <div class="process-node">
+                        <span class="node-dot">3</span>
+                        <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white">Instrumental Analysis</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1 leading-relaxed">Refractometry, spectroscopy, and fluorescence testing confirm the species, detect synthetics, and identify treatments.</p>
+                    </div>
+                    <div class="process-node">
+                        <span class="node-dot">4</span>
+                        <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white">Grading &amp; Report Issuance</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1 leading-relaxed">The stone is graded on the 4Cs and origin, then a numbered, tamper-evident certificate is issued and archived.</p>
+                    </div>
+                    <div class="process-node">
+                        <span class="node-dot">5</span>
+                        <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white">Final Verification &amp; Delivery</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1 leading-relaxed">A second gemologist independently reviews the report before the certified stone and its documents are released to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 4: GEMSTONE QUALITY STANDARDS ======== -->
+    <section class="py-20 md:py-24 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">The 4Cs + Origin</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Gemstone Quality <span class="text-[#B8860B]">Standards</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Color, clarity, cut, carat — and the origin that gives each stone its story.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
+                <!-- Color -->
+                <div class="quality-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="q-letter">C</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#B8860B] dark:text-[#C9A96E]">01</span>
+                    </div>
+                    <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white mb-1.5">Color</h4>
+                    <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed mb-4">Hue, tone, and saturation are evaluated — the most important factor for colored gemstones.</p>
+                    <div class="mt-auto pt-2">
+                        <div class="q-bar-track"><div class="q-bar-fill" style="width: 95%;"></div></div>
+                        <p class="text-[0.6rem] text-[#8B7355] dark:text-[#9A8E7B] mt-1.5 min-h-[1.8rem]">Weighted highest for colored stones</p>
+                    </div>
+                </div>
+                <!-- Clarity -->
+                <div class="quality-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="q-letter">C</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#B8860B] dark:text-[#C9A96E]">02</span>
+                    </div>
+                    <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white mb-1.5">Clarity</h4>
+                    <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed mb-4">Inclusions and blemishes are graded on a defined scale, from flawless to included.</p>
+                    <div class="mt-auto pt-2">
+                        <div class="q-bar-track"><div class="q-bar-fill" style="width: 80%;"></div></div>
+                        <p class="text-[0.6rem] text-[#8B7355] dark:text-[#9A8E7B] mt-1.5 min-h-[1.8rem]">Varies by gemstone type</p>
+                    </div>
+                </div>
+                <!-- Cut -->
+                <div class="quality-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="q-letter">C</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#B8860B] dark:text-[#C9A96E]">03</span>
+                    </div>
+                    <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white mb-1.5">Cut</h4>
+                    <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed mb-4">Proportion, symmetry, and polish determine how brilliantly the stone performs.</p>
+                    <div class="mt-auto pt-2">
+                        <div class="q-bar-track"><div class="q-bar-fill" style="width: 88%;"></div></div>
+                        <p class="text-[0.6rem] text-[#8B7355] dark:text-[#9A8E7B] mt-1.5 min-h-[1.8rem]">Drives brilliance &amp; fire</p>
+                    </div>
+                </div>
+                <!-- Carat -->
+                <div class="quality-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="q-letter">C</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#B8860B] dark:text-[#C9A96E]">04</span>
+                    </div>
+                    <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white mb-1.5">Carat</h4>
+                    <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed mb-4">Weight is measured to the hundredth of a carat on calibrated precision scales.</p>
+                    <div class="mt-auto pt-2">
+                        <div class="q-bar-track"><div class="q-bar-fill" style="width: 70%;"></div></div>
+                        <p class="text-[0.6rem] text-[#8B7355] dark:text-[#9A8E7B] mt-1.5 min-h-[1.8rem]">1 ct = 200 mg</p>
+                    </div>
+                </div>
+                <!-- Origin -->
+                <div class="quality-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="q-letter">O</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#B8860B] dark:text-[#C9A96E]">05</span>
+                    </div>
+                    <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white mb-1.5">Origin</h4>
+                    <p class="text-xs text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 leading-relaxed mb-4">Geographic origin is identified where possible and disclosed on every report.</p>
+                    <div class="mt-auto pt-2">
+                        <div class="q-bar-track"><div class="q-bar-fill" style="width: 85%;"></div></div>
+                        <p class="text-[0.6rem] text-[#8B7355] dark:text-[#9A8E7B] mt-1.5 min-h-[1.8rem]">Adds provenance &amp; value</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 5: CERTIFICATE VERIFICATION ======== -->
+    <section id="verify" class="py-20 md:py-24 bg-[#F5F0EA] dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Look It Up</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Certificate <span class="text-[#B8860B]">Verification</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Verify any Gemora certificate using its unique report number and security code.</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="verify-card">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <!-- Form -->
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-[#1E2A3A] dark:text-white mb-1">Verify Your Certificate</h3>
+                            <p class="text-xs text-[#1E2A3A]/50 dark:text-[#F5F0EA]/50 mb-5">Enter the details printed on your certificate document.</p>
+                            <form onsubmit="event.preventDefault(); alert('Certificate lookup submitted. In a live store this would confirm the report details.');">
+                                <div class="mb-4">
+                                    <label class="form-label" for="report-no">Report Number</label>
+                                    <input type="text" id="report-no" class="form-input" placeholder="e.g. GR-2026-0148" required>
+                                </div>
+                                <div class="mb-5">
+                                    <label class="form-label" for="security-code">Security Code</label>
+                                    <input type="text" id="security-code" class="form-input" placeholder="Last 4 digits on the seal" required>
+                                </div>
+                                <button type="submit" class="btn-primary w-full py-3.5 rounded-full inline-flex items-center justify-center gap-2 text-sm">
+                                    <i class="fas fa-search"></i> Verify Certificate
+                                </button>
+                            </form>
+                        </div>
+                        <!-- Info -->
+                        <div class="md:border-l md:border-[#E8D5B7] dark:md:border-[#2A1E14] md:pl-8">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <span class="w-7 h-7 rounded-full bg-[#B8860B]/15 text-[#B8860B] dark:text-[#C9A96E] flex items-center justify-center text-[0.65rem] font-bold flex-shrink-0">A</span>
+                                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60"><strong class="text-[#1E2A3A] dark:text-white">Where to find it:</strong> The report number is printed at the top of your certificate and on the tamper-evident seal.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="w-7 h-7 rounded-full bg-[#B8860B]/15 text-[#B8860B] dark:text-[#C9A96E] flex items-center justify-center text-[0.65rem] font-bold flex-shrink-0">B</span>
+                                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60"><strong class="text-[#1E2A3A] dark:text-white">What you'll see:</strong> Stone identity, grading results, treatment disclosures, and issue date.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="w-7 h-7 rounded-full bg-[#B8860B]/15 text-[#B8860B] dark:text-[#C9A96E] flex items-center justify-center text-[0.65rem] font-bold flex-shrink-0">C</span>
+                                    <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60"><strong class="text-[#1E2A3A] dark:text-white">Questions?</strong> If a result doesn't match, contact our certification desk immediately — we take discrepancies seriously.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SECTION 6: CERTIFICATION FAQs ======== -->
+    <section class="py-20 md:py-24 bg-white dark:bg-[#0A0E14]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="section-badge">Questions Answered</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3 text-[#1E2A3A] dark:text-white">Certification <span class="text-[#B8860B]">FAQs</span></h2>
+                <div class="section-divider"></div>
+                <p class="text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60">Common questions and expert assistance about gemstone certification.</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-3">
+                <div class="faq-item open">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>What exactly does a gemstone certificate prove?</span>
+                        <i class="fas fa-chevron-down faq-chev"></i>
+                    </button>
+                    <div class="faq-a" style="max-height: 500px;">
+                        <div class="faq-a-inner">A certificate is an independent laboratory's written opinion on a gemstone's identity, grading, and treatments. It proves the stone is what it is described as — and discloses any enhancements — but it is not a monetary appraisal or a warranty.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Which laboratories do you use?</span>
+                        <i class="fas fa-chevron-down faq-chev"></i>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">We work with leading independent laboratories such as GIA, AGS, and reputable regional gemological institutes. The issuing laboratory is always named on the certificate you receive.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Does a certificate increase the value of a stone?</span>
+                        <i class="fas fa-chevron-down faq-chev"></i>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Certification does not change the physical stone, but documented grading supports higher resale confidence, easier insurance, and fair market pricing. A certified stone is generally more liquid than an uncertified one.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>How do I know my certificate is genuine?</span>
+                        <i class="fas fa-chevron-down faq-chev"></i>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Use the verification tool above with the report number and security code. Genuine Gemora certificates also carry a holographic seal and a unique QR reference on the document. If anything looks wrong, contact us immediately.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>Can I request certification for an existing stone?</span>
+                        <i class="fas fa-chevron-down faq-chev"></i>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Yes. Our certification desk can arrange submission of your own gemstone to an independent laboratory. Contact us for a quote, turnaround estimate, and shipping instructions.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        <span>What if my certificate gets lost or damaged?</span>
+                        <i class="fas fa-chevron-down faq-chev"></i>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">Lost or damaged documents can be reissued from the laboratory's archive. Contact our certification desk with your report number and proof of purchase and we will arrange a replacement.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expert assistance CTA -->
+            <div class="max-w-3xl mx-auto mt-10">
+                <div class="rounded-2xl border border-[#E8D5B7] dark:border-[#2A1E14] bg-[#F5F0EA] dark:bg-[#12181F] p-6 md:p-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+                    <div class="text-center sm:text-left">
+                        <h4 class="font-display text-lg font-bold text-[#1E2A3A] dark:text-white">Still have questions?</h4>
+                        <p class="text-sm text-[#1E2A3A]/60 dark:text-[#F5F0EA]/60 mt-1">Our gemologists are happy to help with any certification question.</p>
+                    </div>
+                    <a href="contact.html" class="btn-outline px-7 py-3 rounded-full inline-flex items-center gap-2 text-sm whitespace-nowrap">
+                        <i class="fas fa-comments"></i> Ask an Expert
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer-bg pt-16 pb-8 border-t-4 footer-border">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="text-center md:text-start">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <div class="w-9 h-9 bg-[#B8860B] rounded-xl flex items-center justify-center"><i class="fas fa-gem text-white text-sm"></i></div>
+                        <span class="text-xl font-display font-extrabold tracking-tight logo-text">GEM<span class="logo-accent">ORA</span></span>
+                    </div>
+                    <p class="text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70 text-sm">Premium gemstone &amp; mineral jewelry for your radiant self.</p>
+                    <div class="flex justify-center md:justify-start gap-3 mt-4">
+                        <a href="#" class="social-icon-footer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="collections.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Collections</a></li>
+                        <li><a href="products.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Products</a></li>
+                        <li><a href="custom.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Custom</a></li>
+                        <li><a href="certification.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Certification</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">About Us</a></li>
+                        <li><a href="services.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Services</a></li>
+                        <li><a href="contact.html" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Contact Us</a></li>
+                        <li><a href="contact.html#enquiry" class="footer-text hover:text-[#B8860B] dark:hover:text-[#C9A96E] transition">Enquire</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-start">
+                    <h4 class="footer-heading font-bold text-sm uppercase tracking-wider mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-map-marker-alt text-[#B8860B] mt-1"></i><span>123 Gemstone Ave, Jewel City</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-phone text-[#B8860B]"></i><span>(555) 987-6543</span></li>
+                        <li class="flex justify-center md:justify-start gap-3 text-[#1E2A3A]/70 dark:text-[#F5F0EA]/70"><i class="fas fa-envelope text-[#B8860B]"></i><span>hello@gemora.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-[#1E2A3A]/10 dark:border-white/10 text-center text-sm footer-copyright">
+                <p>&copy; 2026 Gemora Gemstone &amp; Mineral Jewelry. <i class="fas fa-gem text-[#B8860B] mx-1"></i> Radiate with confidence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======== SCRIPTS ======== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme toggle
+            const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+            themeBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                });
+            });
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+            // RTL
+            function setRTL(isRTL) {
+                const html = document.documentElement;
+                if (isRTL === 'rtl' || isRTL === true) {
+                    html.setAttribute('dir', 'rtl');
+                    localStorage.setItem('dir', 'rtl');
+                } else {
+                    html.setAttribute('dir', 'ltr');
+                    localStorage.setItem('dir', 'ltr');
+                }
+            }
+            const savedDir = localStorage.getItem('dir');
+            if (savedDir === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+            else document.documentElement.setAttribute('dir', 'ltr');
+
+            const rtlBtn = document.getElementById('rtl-toggle');
+            if (rtlBtn) {
+                rtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                });
+            }
+            const mobileRtlBtn = document.getElementById('mobile-rtl-toggle');
+            if (mobileRtlBtn) {
+                mobileRtlBtn.addEventListener('click', () => {
+                    const currentDir = document.documentElement.getAttribute('dir');
+                    setRTL(currentDir === 'rtl' ? 'ltr' : 'rtl');
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const mobileToggle = document.getElementById('mobile-toggle');
+                    if (mobileMenu && mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle && mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+
+            // Mobile menu
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    const icon = mobileToggle.querySelector('i');
+                    if (mobileMenu.classList.contains('open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                mobileMenu.querySelectorAll('a:not(#mobile-rtl-toggle):not(#mobile-theme-toggle)').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        if (mobileToggle.querySelector('i')) {
+                            mobileToggle.querySelector('i').classList.remove('fa-times');
+                            mobileToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+
+        // FAQ Accordion
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const answer = item.querySelector('.faq-a');
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('open');
+                faq.querySelector('.faq-a').style.maxHeight = null;
+            });
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+        // Initialize open FAQ
+        document.addEventListener('DOMContentLoaded', () => {
+            const openItem = document.querySelector('.faq-item.open .faq-a');
+            if (openItem) {
+                openItem.style.maxHeight = openItem.scrollHeight + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
